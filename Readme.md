@@ -20,9 +20,9 @@
 -  [x] Títulos
 -  [x] Listas
 -  [x] Link
--  [ ] Tablas I
--  [ ] Tablas II
--  [ ] Tablas III
+-  [x] Tablas I
+-  [x] Tablas II
+-  [x] Tablas III
 -  [ ] Tablas VI
 -  [ ] Comentarios
 -  [ ] Formulario
