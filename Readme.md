@@ -23,8 +23,8 @@
 -  [x] Tablas I
 -  [x] Tablas II
 -  [x] Tablas III
--  [ ] Tablas VI
--  [ ] Comentarios
+-  [x] Tablas VI
+-  [x] Comentarios
 -  [ ] Formulario
 -  [ ] Accesibilidad
 -  [ ] Multimedia
