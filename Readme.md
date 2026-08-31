@@ -6,6 +6,15 @@
 - Mira los videos de las diapositivas que explican cómo resolver cada ejercicio
 - Marca en este readme que ejercicios ya has resuelto
 
+# Mapa de carpetas
+
+- `UNIDAD 1`: filminas de Introducción y Herramientas de Desarrollo, Git y Git parte II. Incluye la guía `GUIA_PARCIALITO_U1.md`.
+- `UNIDAD 2`: filminas y ejercicios de HTML y CSS.
+- `UNIDAD 3`: ejercicios de JavaScript.
+- `UNIDAD 5`: ejercicios de Bootstrap y SASS.
+- `UNIDAD 6`: ejercicios de React.
+- `UNIDAD 7`: ejercicios de Backend y APIs.
+
 # Checklist de Ejercicios OBLIGATORIOS por unidad
 
 ## Unidad 1: Introducción y Herramientas de Desarrollo
@@ -30,11 +39,11 @@
 -  [x] Multimedia
 
 ### CSS
--  [ ] Propiedades tipográficas
--  [ ] Incrustado
--  [ ] Estilo con Descendientes
--  [ ] Pseudo Clases
--  [ ] CV
+-  [x] Propiedades tipográficas
+-  [x] Incrustado
+-  [x] Estilo con Descendientes
+-  [x] Pseudo Clases
+-  [x] CV
 -  [ ] Backgrounds
 -  [ ] Position
 -  [ ] 2 Columnas

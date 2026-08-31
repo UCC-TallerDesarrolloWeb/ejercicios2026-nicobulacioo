@@ -1,4 +1,4 @@
-## Unidad 3: JavaScript y ES6+
+## Unidad 2: Fundamentos de HTML5 y CSS3
 
 ### Ejercicio: Propiedades tipográficas
 
