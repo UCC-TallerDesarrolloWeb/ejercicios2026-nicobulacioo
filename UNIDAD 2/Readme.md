@@ -13,3 +13,4 @@
 ## Guia rapida
 
 - `RESUMEN_HTML_AVANZADO.md`: resumen ordenado de la filmina `U2_HTML_avanzado.html`.
+- `simulador_parcialito_html.html`: formulario autocorregible para practicar HTML con las preguntas del simulacro y refuerzos de clase.
