@@ -8,7 +8,7 @@
 ## Carpetas de ejercicios
 
 - `1-HTML`: ejercicios de HTML.
-- `2-CSS`: ejercicios de CSS.
+- `2-CSS`: ejercicios de CSS. Incluye CV, columnas, backgrounds, productos con grid/grid-areas/transitions e Instagram responsive.
 
 ## Guia rapida
 

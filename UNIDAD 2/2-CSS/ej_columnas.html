@@ -31,7 +31,22 @@
             font-weight: bold;
         }
 
+        .columnas-css2 {
+            margin: 20px 0;
+        }
+
+        .columnas-css2::after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+
+        .columnas-css2 div {
+            padding-right: 18px;
+        }
+
         article {
+            clear: both;
             column-count: 2;
             column-gap: 30px;
         }
@@ -46,6 +61,24 @@
 <section>
     <h3 class="tituloNoticia">CordoBici</h3>
     Publicado el 07/03/2018 en Agropecuarias y Ambiente
+
+    <h4>Forma 1: columnas fluidas con CSS2</h4>
+    <div class="columnas-css2">
+        <div style="float: left; width: 50%;">
+            <p>
+                Esta primera columna usa divs con estilos de CSS2: float left y un ancho del 50%.
+                Es una forma clasica de ubicar contenido en dos columnas fluidas.
+            </p>
+        </div>
+        <div style="float: left; width: 50%;">
+            <p>
+                Esta segunda columna ocupa la otra mitad disponible. Al finalizar, el contenedor
+                limpia los flotantes para que el resto del contenido continue debajo.
+            </p>
+        </div>
+    </div>
+
+    <h4>Forma 2: columnas con CSS3</h4>
     <article>
         <div>
             <p>
