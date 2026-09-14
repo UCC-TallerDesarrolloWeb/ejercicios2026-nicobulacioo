@@ -9,7 +9,7 @@
 # Mapa de carpetas
 
 - `UNIDAD 1`: filminas de Introducción y Herramientas de Desarrollo, Git y Git parte II. Incluye la guía `GUIA_PARCIALITO_U1.md`.
-- `UNIDAD 2`: filminas y ejercicios de HTML y CSS.
+- `UNIDAD 2`: filminas y ejercicios de HTML, CSS y prototipado. Incluye los entregables del proyecto de restaurante.
 - `UNIDAD 3`: ejercicios de JavaScript.
 - `UNIDAD 5`: ejercicios de Bootstrap y SASS.
 - `UNIDAD 6`: ejercicios de React.
@@ -53,6 +53,14 @@
 -  [x] Transitions
 -  [x] Viewport
 -  [x] Responsive
+
+### Prototipado
+-  [x] Diagrama de organización
+-  [x] Sketch / Thumbnail Sketch
+-  [x] Wireflow
+-  [x] Wireframe
+-  [x] Prototipo navegable
+-  [x] Evaluación de interfaz
 
 ## Unidad 3: JavaScript y ES6+
 
