@@ -4,9 +4,10 @@
 
 - [x] `U3_javaScript1.html` guardada y ejercicios independientes completos.
 - [x] `U3_javaScript2.html` guardada y ejercicios independientes completos.
+- [x] `U3_javaScript3.html` guardada y analizada.
 - [x] Pruebas automaticas para conversiones, angulos, operaciones y estructura HTML.
 
-Por indicacion del alumno no se realizaron las consignas asociadas al proyecto de la pagina web: dialog de productos, renderizado del catalogo, dialog dinamico y carrito con `localStorage`.
+Por indicacion del alumno no se realizaron las consignas asociadas al proyecto de la pagina web: dialog de productos, renderizado del catalogo, dialog dinamico y carrito con `localStorage`. La tercera clase tambien queda fuera de la implementacion porque todos sus ejercicios extienden ese catalogo y carrito: eliminar productos, filtros, formato de precios, cantidades y ordenamiento.
 
 ## Js (parte I)
 ### Ejercicio: Hola Mundo!
