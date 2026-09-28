@@ -10,7 +10,7 @@
 
 - `UNIDAD 1`: filminas de Introducción y Herramientas de Desarrollo, Git y Git parte II. Incluye la guía `GUIA_PARCIALITO_U1.md`.
 - `UNIDAD 2`: filminas y ejercicios de HTML, CSS y prototipado. Incluye los entregables del proyecto de restaurante.
-- `UNIDAD 3`: ejercicios de JavaScript.
+- `UNIDAD 3`: filminas JavaScript partes I y II, y ejercicios independientes.
 - `UNIDAD 5`: ejercicios de Bootstrap y SASS.
 - `UNIDAD 6`: ejercicios de React.
 - `UNIDAD 7`: ejercicios de Backend y APIs.
@@ -64,16 +64,16 @@
 
 ## Unidad 3: JavaScript y ES6+
 
--  [ ] Hola Mundo!
--  [ ] Conversor de Unidades
--  [ ] Documentación
--  [ ] Grados a Radianes
--  [ ] Refactorización
--  [ ] Mostrar/Ocultar div
+-  [x] Hola Mundo!
+-  [x] Conversor de Unidades
+-  [x] Documentación
+-  [x] Grados a Radianes
+-  [x] Refactorización
+-  [x] Mostrar/Ocultar div
 -  [ ] Mostrar/Ocultar Dialog
--  [ ] Operaciones Matemáticas
--  [ ] Conversor de Unidades II
--  [ ] Operaciones Matemáticas II
+-  [x] Operaciones Matemáticas
+-  [x] Conversor de Unidades II
+-  [x] Operaciones Matemáticas II
 -  [ ] Renderizado Dinámico
 -  [ ] Renderizado Dinámico del Dialog
 -  [ ] Carrito de Compras con localstorage

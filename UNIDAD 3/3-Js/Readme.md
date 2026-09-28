@@ -1,5 +1,13 @@
 # Unidad 3: JavaScript y ES6+
 
+## Estado de las clases
+
+- [x] `U3_javaScript1.html` guardada y ejercicios independientes completos.
+- [x] `U3_javaScript2.html` guardada y ejercicios independientes completos.
+- [x] Pruebas automaticas para conversiones, angulos, operaciones y estructura HTML.
+
+Por indicacion del alumno no se realizaron las consignas asociadas al proyecto de la pagina web: dialog de productos, renderizado del catalogo, dialog dinamico y carrito con `localStorage`.
+
 ## Js (parte I)
 ### Ejercicio: Hola Mundo!
 
