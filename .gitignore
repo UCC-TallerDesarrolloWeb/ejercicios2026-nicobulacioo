@@ -1,0 +1,12 @@
+# Editores, sistema y dependencias
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+node_modules/
+coverage/
+*.log
+__pycache__/
+*.pyc
+# Elección conservada de la práctica de unidad 1
+html5-cheatsheet.pdf

@@ -6,11 +6,20 @@
 - Mira los videos de las diapositivas que explican cómo resolver cada ejercicio
 - Marca en este readme que ejercicios ya has resuelto
 
+# Mapa de carpetas
+
+- `UNIDAD 1`: filminas de Introducción y Herramientas de Desarrollo, Git y Git parte II. Incluye la guía `GUIA_PARCIALITO_U1.md`.
+- `UNIDAD 2`: filminas y ejercicios de HTML, CSS y prototipado. Incluye los entregables del proyecto de restaurante.
+- `UNIDAD 3`: filminas JavaScript partes I, II y III, y ejercicios independientes.
+- `UNIDAD 5`: ejercicios de Bootstrap y SASS.
+- `UNIDAD 6`: ejercicios de React.
+- `UNIDAD 7`: ejercicios de Backend y APIs.
+
 # Checklist de Ejercicios OBLIGATORIOS por unidad
 
 ## Unidad 1: Introducción y Herramientas de Desarrollo
--  [ ] Readme.md
--  [ ] .gitignore
+-  [x] Readme.md — presentación personal en [myreadme.md](myreadme.md), recuperada de la rama unidad1.
+-  [x] .gitignore
 
 ## Unidad 2: Fundamentos de HTML5 y CSS3
 
@@ -30,41 +39,51 @@
 -  [x] Multimedia
 
 ### CSS
--  [ ] Propiedades tipográficas
--  [ ] Incrustado
--  [ ] Estilo con Descendientes
--  [ ] Pseudo Clases
--  [ ] CV
--  [ ] Backgrounds
--  [ ] Position
--  [ ] 2 Columnas
--  [ ] Grid
--  [ ] grid-areas
--  [ ] Mejora
--  [ ] Transitions
--  [ ] Viewport
--  [ ] Responsive
+-  [x] Propiedades tipográficas
+-  [x] Incrustado
+-  [x] Estilo con Descendientes
+-  [x] Pseudo Clases
+-  [x] CV
+-  [x] Backgrounds
+-  [x] Position
+-  [x] 2 Columnas
+-  [x] Grid
+-  [x] grid-areas
+-  [x] Mejora
+-  [x] Transitions
+-  [x] Viewport
+-  [x] Responsive
+
+### Prototipado
+-  [x] Diagrama de organización
+-  [ ] Sketch / Thumbnail Sketch — los SVG son bocetos digitales; Agus completa el sketch manual de la entrega.
+-  [x] Wireflow
+-  [x] Wireframe
+-  [x] Prototipo navegable
+-  [x] Evaluación de interfaz
 
 ## Unidad 3: JavaScript y ES6+
 
--  [ ] Hola Mundo!
--  [ ] Conversor de Unidades
--  [ ] Documentación
--  [ ] Grados a Radianes
--  [ ] Refactorización
--  [ ] Mostrar/Ocultar div
--  [ ] Mostrar/Ocultar Dialog
--  [ ] Operaciones Matemáticas
--  [ ] Conversor de Unidades II
--  [ ] Operaciones Matemáticas II
--  [ ] Renderizado Dinámico
--  [ ] Renderizado Dinámico del Dialog
--  [ ] Carrito de Compras con localstorage
--  [ ] Vaciar Carrito y Eliminar Producto
--  [ ] Filter
--  [ ] Formatear Precio
--  [ ] Total y Cantidad de Productos
--  [ ] Ordenar el catálogo
+-  [x] Hola Mundo!
+-  [x] Conversor de Unidades
+-  [x] Documentación
+-  [x] Grados a Radianes
+-  [x] Refactorización
+-  [x] Mostrar/Ocultar div
+-  [x] Mostrar/Ocultar Dialog
+-  [x] Operaciones Matemáticas
+-  [x] Conversor de Unidades II
+-  [x] Operaciones Matemáticas II
+-  [x] Renderizado Dinámico
+-  [x] Renderizado Dinámico del Dialog
+-  [x] Carrito de Compras con localstorage
+-  [x] Vaciar Carrito y Eliminar Producto
+-  [x] Filter
+-  [x] Formatear Precio
+-  [x] Total y Cantidad de Productos
+-  [x] Ordenar el catálogo
+
+El catálogo y carrito están en [productos.html](UNIDAD%203/3-Js/productos.html) y [carrito.html](UNIDAD%203/3-Js/carrito.html). La carpeta de prototipado conserva una etapa previa: consultar su README para distinguirla del proyecto grupal vigente. No se marcan unidades futuras ni auditorías AXE/Lighthouse sin haberlas realizado.
 
 ## Unidad 4: Funcionamiento del Navegador y Herramientas de Desarrollo
 -  [ ] Checkeo de accesiilidad: AXE

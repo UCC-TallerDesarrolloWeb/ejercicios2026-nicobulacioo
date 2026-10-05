@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: tienda.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: tienda.js</h1>
+
+
+
+
+
+
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>const productos = [
+  {
+    id: 1,
+    nombre: "Cabezal Sparring",
+    description: "Cabezal de Sparring.",
+    categoria: "Protectores",
+    marca: "Gran Marc",
+    talle: ["1", "2", "3"],
+    precio: 35000,
+    web: "https://www.granmarctiendaonline.com.ar/productos/cabezal-cerrado/",
+    imagen: "cabezal-cerrado.webp",
+  },
+  {
+    id: 2,
+    nombre: "Dobok Dan",
+    description: "Bobok aprobado para torneos internacionales.",
+    categoria: "Dobok",
+    marca: "Daedo",
+    talle: ["1", "2", "3", "4", "5", "6", "7", "8"],
+    precio: 115000,
+    web: "https://www.daedo.com/products/taitf-10813",
+    imagen: "dobok.webp",
+  },
+  {
+    id: 3,
+    nombre: "Escudo de Potencia",
+    description: "Escudo de potencia para entrenamientos.",
+    categoria: "Entrenamiento",
+    marca: "Gran Marc",
+    talle: ["s/talle"],
+    precio: 51700,
+    web: "https://www.granmarctiendaonline.com.ar/productos/escudo-de-potencia-grande/",
+    imagen: "escudo-potencia.webp",
+  },
+  {
+    id: 4,
+    nombre: "Par de focos redondos",
+    description: "Par de focos de 25cm x 25cm para hacer entrenamiento.",
+    categoria: "Entrenamiento",
+    marca: "Gran Marc",
+    talle: ["s/talle"],
+    precio: 15000,
+    web: "https://www.granmarctiendaonline.com.ar/productos/foco-con-dedos/",
+    imagen: "foco-con-dedos.webp",
+  },
+  {
+    id: 5,
+    nombre: "Guantes 10 onzas",
+    description:
+      "Guantes de Sparring de 10 onzas habilitados para torneos internacionales",
+    categoria: "Protectores",
+    marca: "Daedo",
+    talle: ["s/talle"],
+    precio: 35000,
+    web: "https://www.daedo.com/products/pritf-2020",
+    imagen: "protectores-manos.webp",
+  },
+  {
+    id: 6,
+    nombre: "Protectores Pie",
+    description: "Protectores de Pie habilitados para torneos internacionales",
+    categoria: "Protectores",
+    marca: "Daedo",
+    talle: ["XXS", "XS", "S", "M", "L", "XL"],
+    precio: 35000,
+    web: "https://www.daedo.com/collections/collection-itf-gloves/products/pritf-2022",
+    imagen: "protectores-manos.webp",
+  },
+];
+
+/**
+ * Formatea un importe en pesos argentinos.
+ * @param {number} precio
+ * @returns {string}
+ */
+const formatearPrecio = (precio) =>
+  new Intl.NumberFormat("es-AR", { style: "currency", currency: "ARS" }).format(precio);
+
+/**
+ * Obtiene la imagen del material de clase.
+ * @param {object} producto
+ * @returns {string}
+ */
+const imagenProducto = (producto) =>
+  "https://ucc-tallerdesarrolloweb.github.io/filminas/images/ejercicios/" + producto.imagen;
+
+/**
+ * Filtra y ordena una copia, sin modificar el catálogo.
+ * @param {object} filtros
+ * @returns {object[]}
+ */
+const seleccionarProductos = (filtros) => {
+  const lista = productos.filter((producto) =>
+    producto.nombre.toLowerCase().includes(filtros.texto.toLowerCase().trim()) &amp;&amp;
+    producto.precio >= filtros.minimo &amp;&amp; producto.precio &lt;= filtros.maximo &amp;&amp;
+    (filtros.marca === "Todas" || producto.marca === filtros.marca) &amp;&amp;
+    (filtros.categorias.length === 0 || filtros.categorias.includes(producto.categoria))
+  );
+  lista.sort((a, b) => {
+    if (filtros.orden === "precio-desc") return b.precio - a.precio;
+    if (filtros.orden === "precio-asc") return a.precio - b.precio;
+    const comparacion = a.nombre.toLowerCase() &lt; b.nombre.toLowerCase() ? -1 :
+      a.nombre.toLowerCase() > b.nombre.toLowerCase() ? 1 : 0;
+    return filtros.orden === "nombre-desc" ? -comparacion : comparacion;
+  });
+  return lista;
+};
+
+/**
+ * Dibuja las tarjetas con el identificador estable de cada producto.
+ * @param {object[]} lista
+ * @returns {void}
+ */
+const cargarProductos = (lista) => {
+  document.getElementById("contenedor-productos").innerHTML = lista.map((producto) =>
+    `&lt;article class="tarjeta">
+      &lt;img src="${imagenProducto(producto)}" alt="${producto.nombre}">
+      &lt;h2>${producto.nombre}&lt;/h2>
+      &lt;p>${producto.marca} · ${producto.categoria}&lt;/p>
+      &lt;p class="precio">${formatearPrecio(producto.precio)}&lt;/p>
+      &lt;button type="button" onclick="mostrarDetalle(${producto.id})">Ver detalle de ${producto.nombre}&lt;/button>
+      &lt;label for="cantidad-${producto.id}">Cantidad de ${producto.nombre}&lt;/label>
+      &lt;input id="cantidad-${producto.id}" type="number" min="1" max="99" step="1" value="1">
+      &lt;button type="button" onclick="agregarAlCarrito(${producto.id})">Agregar al carrito&lt;/button>
+    &lt;/article>`
+  ).join("");
+};
+
+/**
+ * Lee los controles y actualiza el catálogo; valida el rango de precios.
+ * @returns {void}
+ */
+const filtrarProductos = () => {
+  const minimo = Number(document.getElementById("precio-min").value);
+  const maximoTexto = document.getElementById("precio-max").value;
+  const maximo = maximoTexto === "" ? Infinity : Number(maximoTexto);
+  if (!Number.isFinite(minimo) || minimo &lt; 0 || maximo &lt; minimo || Number.isNaN(maximo)) {
+    alert("Revisá los precios: el mínimo no puede superar al máximo ni ser negativo.");
+    return;
+  }
+  const categorias = [];
+  if (document.getElementById("protectores").checked) categorias.push("Protectores");
+  if (document.getElementById("entrenamiento").checked) categorias.push("Entrenamiento");
+  if (document.getElementById("dobok").checked) categorias.push("Dobok");
+  const lista = seleccionarProductos({
+    texto: document.getElementById("search").value,
+    minimo, maximo, categorias,
+    marca: document.getElementById("marca").value,
+    orden: document.getElementById("order").value
+  });
+  cargarProductos(lista);
+  document.getElementById("mensaje-tienda").textContent = lista.length === 0 ?
+    "No hay productos que coincidan con los filtros." : lista.length + " productos encontrados.";
+};
+
+/**
+ * Abre el detalle del producto seleccionado.
+ * @param {number} id
+ * @returns {void}
+ */
+const mostrarDetalle = (id) => {
+  const producto = productos.find((item) => item.id === id);
+  if (!producto) return;
+  document.getElementById("titulo-producto").textContent = producto.nombre;
+  document.getElementById("descripcion-producto").textContent = producto.description;
+  document.getElementById("datos-producto").textContent =
+    producto.marca + " · " + producto.categoria + " · Talles: " + producto.talle.join(", ");
+  document.getElementById("precio-producto").textContent = formatearPrecio(producto.precio);
+  const imagen = document.getElementById("imagen-producto");
+  imagen.src = imagenProducto(producto);
+  imagen.alt = producto.nombre;
+  document.getElementById("web-producto").href = producto.web;
+  document.getElementById("detalle-producto").showModal();
+};
+
+/**
+ * Cierra el diálogo de detalle.
+ * @returns {void}
+ */
+const cerrarDetalle = () => document.getElementById("detalle-producto").close();
+
+/**
+ * Comprueba el límite de unidades por producto.
+ * @param {number} cantidad
+ * @returns {boolean}
+ */
+const cantidadValida = (cantidad) => Number.isInteger(cantidad) &amp;&amp; cantidad >= 1 &amp;&amp; cantidad &lt;= 99;
+
+/**
+ * Recupera únicamente registros válidos del navegador.
+ * @returns {object[]}
+ */
+const leerCarrito = () => {
+  try {
+    const guardado = JSON.parse(localStorage.getItem("carrito"));
+    if (!Array.isArray(guardado)) return [];
+    const carrito = [];
+    guardado.forEach((item) => {
+      if (!item || !productos.some((producto) => producto.id === item.id) ||
+          !cantidadValida(item.cantidad)) return;
+      const existente = carrito.find((producto) => producto.id === item.id);
+      if (!existente) carrito.push({ id: item.id, cantidad: item.cantidad });
+    });
+    return carrito;
+  } catch (error) {
+    return [];
+  }
+};
+
+/**
+ * Guarda el carrito o elimina su clave cuando queda vacío.
+ * @param {object[]} carrito
+ * @returns {boolean}
+ */
+const guardarCarrito = (carrito) => {
+  try {
+    if (carrito.length === 0) localStorage.removeItem("carrito");
+    else localStorage.setItem("carrito", JSON.stringify(carrito));
+    return true;
+  } catch (error) {
+    alert("No se pudo guardar el carrito. Revisá los permisos de almacenamiento del navegador.");
+    return false;
+  }
+};
+
+/**
+ * Calcula el total usando los precios del catálogo.
+ * @param {object[]} carrito
+ * @returns {number}
+ */
+const calcularTotal = (carrito) => carrito.reduce((total, item) =>
+  total + productos.find((producto) => producto.id === item.id).precio * item.cantidad, 0);
+
+/**
+ * Actualiza el contador con la suma de unidades.
+ * @returns {void}
+ */
+const contarProductos = () => {
+  document.getElementById("cant-prod").textContent =
+    leerCarrito().reduce((total, item) => total + item.cantidad, 0);
+};
+
+/**
+ * Agrega unidades sin duplicar la entrada del producto.
+ * @param {number} id
+ * @returns {void}
+ */
+const agregarAlCarrito = (id) => {
+  if (!productos.some((producto) => producto.id === id)) return;
+  const campo = document.getElementById("cantidad-" + id);
+  const cantidad = Number(campo.value);
+  const carrito = leerCarrito();
+  const existente = carrito.find((item) => item.id === id);
+  if (!cantidadValida(cantidad) || (existente &amp;&amp; !cantidadValida(existente.cantidad + cantidad))) {
+    alert("Ingresá una cantidad entera entre 1 y 99. El acumulado tampoco puede superar 99.");
+    campo.value = "";
+    campo.focus();
+    return;
+  }
+  if (existente) existente.cantidad += cantidad;
+  else carrito.push({ id, cantidad });
+  if (!guardarCarrito(carrito)) return;
+  contarProductos();
+  document.getElementById("mensaje-tienda").textContent = "Producto agregado al carrito.";
+};
+
+/**
+ * Actualiza total, contador y disponibilidad del botón de vaciado.
+ * @param {object[]} carrito
+ * @returns {void}
+ */
+const actualizarTotales = (carrito) => {
+  contarProductos();
+  document.getElementById("total-carrito").textContent = formatearPrecio(calcularTotal(carrito));
+  document.getElementById("vaciar-carrito").disabled = carrito.length === 0;
+};
+
+/**
+ * Renderiza los productos guardados, o informa que el carrito está vacío.
+ * @returns {void}
+ */
+const mostrarCarrito = () => {
+  const carrito = leerCarrito();
+  document.getElementById("mostrar-carrito").innerHTML = carrito.length === 0 ?
+    "&lt;p>Tu carrito está vacío. Podés agregar productos desde el catálogo.&lt;/p>" :
+    carrito.map((item) => {
+      const producto = productos.find((producto) => producto.id === item.id);
+      return `&lt;article class="tarjeta">
+        &lt;h2>${producto.nombre}&lt;/h2>
+        &lt;p>Precio por unidad: ${formatearPrecio(producto.precio)}&lt;/p>
+        &lt;label for="unidades-${item.id}">Cantidad de ${producto.nombre}&lt;/label>
+        &lt;input id="unidades-${item.id}" type="number" min="1" max="99" step="1"
+          value="${item.cantidad}" onchange="cambiarCantidad(${item.id})">
+        &lt;p>Subtotal: &lt;span id="subtotal-${item.id}">${formatearPrecio(producto.precio * item.cantidad)}&lt;/span>&lt;/p>
+        &lt;button type="button" onclick="eliminarProducto(${item.id})">Eliminar ${producto.nombre}&lt;/button>
+      &lt;/article>`;
+    }).join("");
+  actualizarTotales(carrito);
+};
+
+/**
+ * Cambia unidades sin reconstruir el campo enfocado.
+ * @param {number} id
+ * @returns {void}
+ */
+const cambiarCantidad = (id) => {
+  const carrito = leerCarrito();
+  const item = carrito.find((producto) => producto.id === id);
+  if (!item) return;
+  const campo = document.getElementById("unidades-" + id);
+  const cantidad = Number(campo.value);
+  if (!cantidadValida(cantidad)) {
+    alert("Ingresá una cantidad entera entre 1 y 99.");
+    campo.value = item.cantidad;
+    campo.focus();
+    return;
+  }
+  item.cantidad = cantidad;
+  if (!guardarCarrito(carrito)) return;
+  const producto = productos.find((producto) => producto.id === id);
+  document.getElementById("subtotal-" + id).textContent = formatearPrecio(producto.precio * cantidad);
+  actualizarTotales(carrito);
+  document.getElementById("mensaje-tienda").textContent = "Cantidad actualizada.";
+};
+
+/**
+ * Elimina una entrada completa con splice.
+ * @param {number} id
+ * @returns {void}
+ */
+const eliminarProducto = (id) => {
+  const carrito = leerCarrito();
+  const indice = carrito.findIndex((item) => item.id === id);
+  if (indice === -1) return;
+  carrito.splice(indice, 1);
+  if (!guardarCarrito(carrito)) return;
+  mostrarCarrito();
+  document.getElementById("mensaje-tienda").textContent = "Producto eliminado.";
+};
+
+/**
+ * Vacía el almacenamiento y actualiza la vista.
+ * @returns {void}
+ */
+const vaciarCarrito = () => {
+  if (!guardarCarrito([])) return;
+  mostrarCarrito();
+  document.getElementById("mensaje-tienda").textContent = "Carrito vaciado.";
+};
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#actualizarTotales">actualizarTotales</a></li><li><a href="global.html#agregarAlCarrito">agregarAlCarrito</a></li><li><a href="global.html#calcularOperacion">calcularOperacion</a></li><li><a href="global.html#calcularTotal">calcularTotal</a></li><li><a href="global.html#calculateOperations">calculateOperations</a></li><li><a href="global.html#cambiarCantidad">cambiarCantidad</a></li><li><a href="global.html#cantidadValida">cantidadValida</a></li><li><a href="global.html#cargarProductos">cargarProductos</a></li><li><a href="global.html#cerrarDetalle">cerrarDetalle</a></li><li><a href="global.html#contarProductos">contarProductos</a></li><li><a href="global.html#convertUnits">convertUnits</a></li><li><a href="global.html#convertirAngulos">convertirAngulos</a></li><li><a href="global.html#convertirUnidades">convertirUnidades</a></li><li><a href="global.html#degreesToRadians">degreesToRadians</a></li><li><a href="global.html#eliminarProducto">eliminarProducto</a></li><li><a href="global.html#filtrarProductos">filtrarProductos</a></li><li><a href="global.html#formatearPrecio">formatearPrecio</a></li><li><a href="global.html#guardarCarrito">guardarCarrito</a></li><li><a href="global.html#imagenProducto">imagenProducto</a></li><li><a href="global.html#leerCarrito">leerCarrito</a></li><li><a href="global.html#mostrarCarrito">mostrarCarrito</a></li><li><a href="global.html#mostrarDetalle">mostrarDetalle</a></li><li><a href="global.html#mostrarOcultar">mostrarOcultar</a></li><li><a href="global.html#parseNumericInput">parseNumericInput</a></li><li><a href="global.html#radiansToDegrees">radiansToDegrees</a></li><li><a href="global.html#roundTwo">roundTwo</a></li><li><a href="global.html#saludar">saludar</a></li><li><a href="global.html#seleccionarProductos">seleccionarProductos</a></li><li><a href="global.html#vaciarCarrito">vaciarCarrito</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.5</a> on Mon Oct 05 2026 09:52:28 GMT-0300 (hora estándar de Argentina)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

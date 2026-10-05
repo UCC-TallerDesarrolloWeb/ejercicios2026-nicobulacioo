@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: misFunciones.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: misFunciones.js</h1>
+
+
+
+
+
+
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/**
+ * Convierte una entrada de texto a numero y acepta coma decimal.
+ * @method parseNumericInput
+ * @param {string|number} value - Valor ingresado por el usuario.
+ * @returns {number} Numero convertido o NaN si la entrada no es valida.
+ */
+const parseNumericInput = value => Number(String(value).trim().replace(",", "."));
+
+/**
+ * Redondea un número a dos decimales.
+ * @method roundTwo
+ * @param {number} value - Número que se desea redondear.
+ * @returns {number} Valor redondeado.
+ */
+const roundTwo = value => Math.round((value + Number.EPSILON) * 100) / 100;
+
+/**
+ * Convierte una longitud a metros, pulgadas, pies y yardas.
+ * @method convertUnits
+ * @param {string} unit - Id de la unidad modificada.
+ * @param {string|number} value - Valor ingresado por el usuario.
+ * @returns {object|null} Conversiones con dos decimales o null si el valor es invalido.
+ */
+const convertUnits = (unit, value) => {
+    const numericValue = parseNumericInput(value);
+    if (!Number.isFinite(numericValue)) return null;
+
+    const metersByUnit = {
+        metro: 1,
+        pulgada: 0.0254,
+        pie: 0.3048,
+        yarda: 0.9144
+    };
+
+    if (!metersByUnit[unit]) return null;
+
+    const meters = numericValue * metersByUnit[unit];
+    return {
+        metro: roundTwo(meters),
+        pulgada: roundTwo(meters / metersByUnit.pulgada),
+        pie: roundTwo(meters / metersByUnit.pie),
+        yarda: roundTwo(meters / metersByUnit.yarda)
+    };
+};
+
+/**
+ * Actualiza los campos del conversor a partir del valor modificado.
+ * @method convertirUnidades
+ * @param {string} id - Id del campo que origino el cambio.
+ * @param {string|number} value - Valor ingresado por el usuario.
+ * @returns {void}
+ */
+const convertirUnidades = (id, value) => {
+    const conversion = convertUnits(id, value);
+    const fields = ["metro", "pulgada", "pie", "yarda"];
+
+    if (!conversion) {
+        fields.forEach(field => {
+            document.getElementById(field).value = "";
+        });
+        alert(`Se ingreso un valor invalido en ${id}`);
+        return;
+    }
+
+    fields.forEach(field => {
+        document.getElementById(field).value = conversion[field];
+    });
+};
+
+/**
+ * Convierte grados a radianes.
+ * @method degreesToRadians
+ * @param {number} degrees - Angulo expresado en grados.
+ * @returns {number} Angulo en radianes con cuatro decimales.
+ */
+const degreesToRadians = degrees => Math.round((Number(degrees) * Math.PI / 180) * 10000) / 10000;
+
+/**
+ * Convierte radianes a grados.
+ * @method radiansToDegrees
+ * @param {number} radians - Angulo expresado en radianes.
+ * @returns {number} Angulo en grados con cuatro decimales.
+ */
+const radiansToDegrees = radians => Math.round((Number(radians) * 180 / Math.PI) * 10000) / 10000;
+
+/**
+ * Actualiza grados o radianes según el campo modificado.
+ * @method convertirAngulos
+ * @param {string} id - Identificador del campo de origen.
+ * @param {string|number} value - Ángulo ingresado.
+ * @returns {void}
+ */
+const convertirAngulos = (id, value) => {
+    const numericValue = parseNumericInput(value);
+    const degreesField = document.getElementById("grados");
+    const radiansField = document.getElementById("radianes");
+
+    if (!Number.isFinite(numericValue)) {
+        degreesField.value = "";
+        radiansField.value = "";
+        alert("Ingrese un valor numerico valido.");
+        return;
+    }
+
+    if (id === "grados") {
+        radiansField.value = degreesToRadians(numericValue);
+    } else {
+        degreesField.value = radiansToDegrees(numericValue);
+    }
+};
+
+/**
+ * Muestra u oculta el bloque del ejercicio.
+ * @method mostrarOcultar
+ * @param {boolean} show - True para mostrar el contenido.
+ * @returns {void}
+ */
+const mostrarOcultar = show => {
+    document.getElementById("contenidoAlternable").style.display = show ? "block" : "none";
+};
+
+/**
+ * Resuelve suma, resta, multiplicacion y division para dos valores.
+ * @method calculateOperations
+ * @param {string|number} firstValue - Primer operando.
+ * @param {string|number} secondValue - Segundo operando.
+ * @returns {object|null} Resultados o null si un operando no es numerico.
+ */
+const calculateOperations = (firstValue, secondValue) => {
+    const first = parseNumericInput(firstValue);
+    const second = parseNumericInput(secondValue);
+    if (!Number.isFinite(first) || !Number.isFinite(second)) return null;
+
+    return {
+        suma: first + second,
+        resta: first - second,
+        multiplicacion: first * second,
+        division: second === 0 ? null : first / second
+    };
+};
+
+/**
+ * Lee los operandos y muestra el resultado de la operación seleccionada.
+ * @method calcularOperacion
+ * @param {string} operation - Suma, resta, multiplicacion o division.
+ * @returns {void}
+ */
+const calcularOperacion = operation => {
+    const config = {
+        suma: ["nums1", "nums2", "totalS"],
+        resta: ["numr1", "numr2", "totalR"],
+        multiplicacion: ["numm1", "numm2", "totalM"],
+        division: ["numd1", "numd2", "totalD"]
+    };
+    const [firstId, secondId, resultId] = config[operation];
+    const result = calculateOperations(
+        document.getElementById(firstId).value,
+        document.getElementById(secondId).value
+    );
+    const output = document.getElementById(resultId);
+
+    if (!result) {
+        output.innerHTML = "Ingrese dos numeros";
+        return;
+    }
+
+    const value = result[operation];
+    output.innerHTML = value === null ? "No se puede dividir por cero" : roundTwo(value);
+};
+
+/**
+ * Muestra el saludo al cargar el ejercicio.
+ * @method saludar
+ * @returns {void}
+ */
+const saludar = () => alert("Hola Mundo!");
+
+if (typeof module !== "undefined" &amp;&amp; module.exports) {
+    module.exports = {
+        parseNumericInput,
+        convertUnits,
+        degreesToRadians,
+        radiansToDegrees,
+        calculateOperations
+    };
+}
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#actualizarTotales">actualizarTotales</a></li><li><a href="global.html#agregarAlCarrito">agregarAlCarrito</a></li><li><a href="global.html#calcularOperacion">calcularOperacion</a></li><li><a href="global.html#calcularTotal">calcularTotal</a></li><li><a href="global.html#calculateOperations">calculateOperations</a></li><li><a href="global.html#cambiarCantidad">cambiarCantidad</a></li><li><a href="global.html#cantidadValida">cantidadValida</a></li><li><a href="global.html#cargarProductos">cargarProductos</a></li><li><a href="global.html#cerrarDetalle">cerrarDetalle</a></li><li><a href="global.html#contarProductos">contarProductos</a></li><li><a href="global.html#convertUnits">convertUnits</a></li><li><a href="global.html#convertirAngulos">convertirAngulos</a></li><li><a href="global.html#convertirUnidades">convertirUnidades</a></li><li><a href="global.html#degreesToRadians">degreesToRadians</a></li><li><a href="global.html#eliminarProducto">eliminarProducto</a></li><li><a href="global.html#filtrarProductos">filtrarProductos</a></li><li><a href="global.html#formatearPrecio">formatearPrecio</a></li><li><a href="global.html#guardarCarrito">guardarCarrito</a></li><li><a href="global.html#imagenProducto">imagenProducto</a></li><li><a href="global.html#leerCarrito">leerCarrito</a></li><li><a href="global.html#mostrarCarrito">mostrarCarrito</a></li><li><a href="global.html#mostrarDetalle">mostrarDetalle</a></li><li><a href="global.html#mostrarOcultar">mostrarOcultar</a></li><li><a href="global.html#parseNumericInput">parseNumericInput</a></li><li><a href="global.html#radiansToDegrees">radiansToDegrees</a></li><li><a href="global.html#roundTwo">roundTwo</a></li><li><a href="global.html#saludar">saludar</a></li><li><a href="global.html#seleccionarProductos">seleccionarProductos</a></li><li><a href="global.html#vaciarCarrito">vaciarCarrito</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.5</a> on Mon Oct 05 2026 09:52:28 GMT-0300 (hora estándar de Argentina)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>
