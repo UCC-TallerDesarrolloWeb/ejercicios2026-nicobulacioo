@@ -18,8 +18,8 @@
 # Checklist de Ejercicios OBLIGATORIOS por unidad
 
 ## Unidad 1: Introducción y Herramientas de Desarrollo
--  [ ] Readme.md
--  [ ] .gitignore
+-  [x] Readme.md — presentación personal en [myreadme.md](myreadme.md), recuperada de la rama unidad1.
+-  [x] .gitignore
 
 ## Unidad 2: Fundamentos de HTML5 y CSS3
 
@@ -56,7 +56,7 @@
 
 ### Prototipado
 -  [x] Diagrama de organización
--  [x] Sketch / Thumbnail Sketch
+-  [ ] Sketch / Thumbnail Sketch — los SVG son bocetos digitales; Agus completa el sketch manual de la entrega.
 -  [x] Wireflow
 -  [x] Wireframe
 -  [x] Prototipo navegable
@@ -70,18 +70,20 @@
 -  [x] Grados a Radianes
 -  [x] Refactorización
 -  [x] Mostrar/Ocultar div
--  [ ] Mostrar/Ocultar Dialog
+-  [x] Mostrar/Ocultar Dialog
 -  [x] Operaciones Matemáticas
 -  [x] Conversor de Unidades II
 -  [x] Operaciones Matemáticas II
--  [ ] Renderizado Dinámico
--  [ ] Renderizado Dinámico del Dialog
--  [ ] Carrito de Compras con localstorage
--  [ ] Vaciar Carrito y Eliminar Producto
--  [ ] Filter
--  [ ] Formatear Precio
--  [ ] Total y Cantidad de Productos
--  [ ] Ordenar el catálogo
+-  [x] Renderizado Dinámico
+-  [x] Renderizado Dinámico del Dialog
+-  [x] Carrito de Compras con localstorage
+-  [x] Vaciar Carrito y Eliminar Producto
+-  [x] Filter
+-  [x] Formatear Precio
+-  [x] Total y Cantidad de Productos
+-  [x] Ordenar el catálogo
+
+El catálogo y carrito están en [productos.html](UNIDAD%203/3-Js/productos.html) y [carrito.html](UNIDAD%203/3-Js/carrito.html). La carpeta de prototipado conserva una etapa previa: consultar su README para distinguirla del proyecto grupal vigente. No se marcan unidades futuras ni auditorías AXE/Lighthouse sin haberlas realizado.
 
 ## Unidad 4: Funcionamiento del Navegador y Herramientas de Desarrollo
 -  [ ] Checkeo de accesiilidad: AXE

@@ -1,6 +1,12 @@
 # Prototipado - Pagina web de restaurante
 
-Entregables realizados a partir de `U2_prototipado.html` y de las decisiones del equipo para el proyecto del restaurante.
+## Alcance: etapa previa de diseño
+
+Estos archivos conservan una propuesta inicial de cuatro páginas (Inicio, Conocenos, Menú y Pedido), con datos para entrega a domicilio. No son la especificación vigente ni los entregables finales del proyecto grupal.
+
+La versión final tiene cinco páginas (Inicio, Menú, Nosotros, Ubicación y Pedido) y pedidos por mesa, con apellido, mesa y método de pago. Consultar el [repositorio grupal](https://github.com/Agus269/Proyecto2026-Rodr-guezRichard-Bulacio) y el [sitio publicado](https://agus269.github.io/Proyecto2026-Rodr-guezRichard-Bulacio/primera-entrega/).
+
+Los SVG de `Sketch/` son bocetos digitales de esta etapa, **no dibujos hechos a mano**. Las fotos y el sketch requerido para la entrega final quedan a cargo de Agus; no se da ese requisito por cumplido mediante estos SVG.
 
 ## Archivos
 
@@ -8,7 +14,7 @@ Entregables realizados a partir de `U2_prototipado.html` y de las decisiones del
 - `Proyecto-restaurante.md`: descripcion funcional y decisiones aprobadas.
 - `Evaluacion-interfaz.md`: aplicacion de principios de diseño, mensajes y usabilidad.
 - `diagrama-organizacion.svg`: arquitectura de informacion.
-- `Sketch/`: thumbnail sketches para computadora y celular.
+- `Sketch/`: bocetos digitales históricos para computadora y celular.
 - `Wireframes/`: wireframes desktop/mobile y wireflow del pedido.
 - `prototipo.html`: prototipo navegable de fidelidad media.
 - `verify.js`: comprobacion automatica de archivos y requisitos.
@@ -18,7 +24,7 @@ Entregables realizados a partir de `U2_prototipado.html` y de las decisiones del
 | Consigna | Entregable |
 | --- | --- |
 | Diagrama de organizacion | `diagrama-organizacion.svg` |
-| Sketch / Thumbnail Sketch | `Sketch/sketch-desktop.svg` y `Sketch/sketch-mobile.svg` |
+| Bocetos digitales (no acreditan sketch manual) | `Sketch/sketch-desktop.svg` y `Sketch/sketch-mobile.svg` |
 | Wireframe de escritorio | `Wireframes/wireframe-desktop.svg` |
 | Wireframe para celular | `Wireframes/wireframe-mobile.svg` |
 | Wireflow | `Wireframes/wireflow.svg` |

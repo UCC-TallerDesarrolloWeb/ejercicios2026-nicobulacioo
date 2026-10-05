@@ -1,5 +1,7 @@
 # Evaluacion de interfaz - Restaurante
 
+> Evaluación de la propuesta inicial, no auditoría del sitio final. Los campos de nombre, teléfono y dirección corresponden a esa etapa previa; la versión final usa apellido, mesa y pago. Ver el [proyecto grupal vigente](https://github.com/Agus269/Proyecto2026-Rodr-guezRichard-Bulacio).
+
 Aplicacion de los contenidos de `U2_interfazUsuario.html` al prototipo del restaurante.
 
 ## Principios de diseño

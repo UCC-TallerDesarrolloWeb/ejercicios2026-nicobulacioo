@@ -1,5 +1,7 @@
 # Proyecto - Pagina web de restaurante
 
+> Documento histórico de la práctica inicial: cuatro páginas y entrega a domicilio. No describe la versión final, que usa cinco páginas y pedidos por mesa. Ver el [proyecto grupal vigente](https://github.com/Agus269/Proyecto2026-Rodr-guezRichard-Bulacio).
+
 ## Objetivo
 
 Diseñar un sitio responsivo para presentar el restaurante, mostrar su carta y permitir que un cliente prepare un pedido.
