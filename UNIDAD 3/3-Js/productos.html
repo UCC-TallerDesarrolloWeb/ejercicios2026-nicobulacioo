@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Nicolás Bulacio">
+  <meta name="description" content="Ejercicio de catálogo y carrito de productos de taekwondo.">
+  <title>Catálogo | Ejercicio de tienda</title>
+  <link rel="stylesheet" href="productos.css">
+  <script src="tienda.js" defer></script>
+</head>
+<body onload="filtrarProductos(); contarProductos()">
+  <a class="saltar" href="#contenido">Saltar al contenido</a>
+  <header>
+    <h1>Tienda de taekwondo</h1>
+    <nav aria-label="Navegación principal">
+      <a href="productos.html" aria-current="page">Catálogo</a>
+      <a href="carrito.html">Carrito (<span id="cant-prod">0</span> unidades)</a>
+    </nav>
+  </header>
+  <main id="contenido">
+    <h2>Catálogo de productos</h2>
+    <noscript>Este ejercicio necesita JavaScript para mostrar productos y guardar el carrito.</noscript>
+    <form class="filtros" onsubmit="filtrarProductos(); return false">
+      <div>
+        <label for="search">Buscar por nombre</label>
+        <input id="search" type="search" placeholder="Por ejemplo: dobok" maxlength="80" oninput="filtrarProductos()">
+      </div>
+      <div>
+        <label for="precio-min">Precio mínimo</label>
+        <input id="precio-min" type="number" min="0" step="0.01" placeholder="0" onchange="filtrarProductos()">
+      </div>
+      <div>
+        <label for="precio-max">Precio máximo</label>
+        <input id="precio-max" type="number" min="0" step="0.01" placeholder="Sin límite" onchange="filtrarProductos()">
+      </div>
+      <div>
+        <label for="marca">Marca</label>
+        <select id="marca" onchange="filtrarProductos()">
+          <option value="Todas">Todas</option>
+          <option value="Gran Marc">Gran Marc</option>
+          <option value="Daedo">Daedo</option>
+        </select>
+      </div>
+      <fieldset>
+        <legend>Categorías</legend>
+        <label><input id="protectores" type="checkbox" onchange="filtrarProductos()"> Protectores</label>
+        <label><input id="entrenamiento" type="checkbox" onchange="filtrarProductos()"> Entrenamiento</label>
+        <label><input id="dobok" type="checkbox" onchange="filtrarProductos()"> Dobok</label>
+      </fieldset>
+      <div>
+        <label for="order">Ordenar</label>
+        <select id="order" onchange="filtrarProductos()">
+          <option value="precio-asc">Precio: menor a mayor</option>
+          <option value="precio-desc">Precio: mayor a menor</option>
+          <option value="nombre-asc">Nombre: A a Z</option>
+          <option value="nombre-desc">Nombre: Z a A</option>
+        </select>
+      </div>
+      <button type="submit">Aplicar filtros</button>
+    </form>
+    <p id="mensaje-tienda" role="status" aria-live="polite"></p>
+    <div id="contenedor-productos" class="catalogo"></div>
+    <dialog id="detalle-producto" aria-labelledby="titulo-producto">
+      <h2 id="titulo-producto"></h2>
+      <img id="imagen-producto" alt="">
+      <p id="descripcion-producto"></p>
+      <p id="datos-producto"></p>
+      <p id="precio-producto" class="precio"></p>
+      <p><a id="web-producto" target="_blank" rel="noopener noreferrer">Ver ficha del fabricante (otra pestaña)</a></p>
+      <button type="button" onclick="cerrarDetalle()">Cerrar detalle</button>
+    </dialog>
+  </main>
+  <footer><p>Ejercicio de JavaScript — Nicolás Bulacio. No es una tienda real.</p></footer>
+</body>
+</html>

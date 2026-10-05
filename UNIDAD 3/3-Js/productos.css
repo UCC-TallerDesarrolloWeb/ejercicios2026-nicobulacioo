@@ -1,0 +1,43 @@
+* { box-sizing: border-box; }
+body { margin: 0; font-family: Arial, sans-serif; color: #182b36; background: #f5f7f9; line-height: 1.5; }
+header, footer { padding: 1.25rem; background: #182b36; color: white; }
+header h1 { margin: 0 0 1rem; font-size: 1.75rem; }
+nav { display: flex; flex-wrap: wrap; gap: 1rem; }
+nav a { color: white; padding: .5rem; }
+nav a[aria-current="page"] { font-weight: bold; text-decoration-thickness: .2rem; }
+main { max-width: 1200px; margin: auto; padding: 1.25rem; }
+a { color: #00557a; }
+button, input, select { font: inherit; min-height: 44px; }
+button { padding: .5rem 1rem; background: #00557a; color: white; border: 0; border-radius: .3rem; cursor: pointer; }
+button:hover { background: #003d57; }
+button:disabled { background: #586772; cursor: default; }
+input, select { padding: .4rem; border: 1px solid #586772; border-radius: .3rem; max-width: 100%; }
+:focus-visible { outline: 3px solid #d47700; outline-offset: 3px; }
+label { display: block; }
+.filtros { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; padding: 1rem; background: white; border: 1px solid #b5c1c9; }
+.filtros input:not([type="checkbox"]), .filtros select { width: 100%; }
+fieldset { margin: 0; border: 1px solid #b5c1c9; }
+fieldset label { display: flex; align-items: center; gap: .5rem; }
+fieldset input { min-height: auto; width: 1.2rem; height: 1.2rem; }
+.catalogo { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; }
+.tarjeta { background: white; border: 1px solid #b5c1c9; padding: 1rem; border-radius: .3rem; overflow-wrap: anywhere; }
+.tarjeta img { width: 100%; height: 210px; object-fit: contain; }
+.tarjeta h2 { font-size: 1.2rem; }
+.tarjeta button { display: block; width: 100%; margin: .75rem 0; }
+.tarjeta input { width: 100%; }
+.precio { font-weight: bold; font-size: 1.2rem; }
+.resumen { margin: 1.5rem 0; padding: 1rem; border: 1px solid #b5c1c9; background: white; }
+.resumen a { display: inline-block; margin: 1rem; }
+dialog { width: 90%; max-width: 32rem; max-height: 90vh; overflow: auto; border: 1px solid #586772; padding: 1.5rem; }
+dialog img { width: 100%; height: 200px; object-fit: contain; }
+dialog::backdrop { background: rgba(0, 0, 0, .65); }
+.saltar { position: absolute; top: -100px; padding: 1rem; background: white; z-index: 2; }
+.saltar:focus { top: 0; }
+@media (max-width: 800px) {
+  .catalogo, .filtros { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 520px) {
+  .catalogo, .filtros { grid-template-columns: 1fr; }
+  main { padding: 1rem; }
+  .resumen a { display: block; margin: 1rem 0; }
+}

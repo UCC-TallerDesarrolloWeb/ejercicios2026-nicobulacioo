@@ -7,7 +7,39 @@
 - [x] `U3_javaScript3.html` guardada y analizada.
 - [x] Pruebas automaticas para conversiones, angulos, operaciones y estructura HTML.
 
-Por indicacion del alumno no se realizaron las consignas asociadas al proyecto de la pagina web: dialog de productos, renderizado del catalogo, dialog dinamico y carrito con `localStorage`. La tercera clase tambien queda fuera de la implementacion porque todos sus ejercicios extienden ese catalogo y carrito: eliminar productos, filtros, formato de precios, cantidades y ordenamiento.
+Se completaron los ejercicios de catálogo y carrito con los productos del material de clase. Son una práctica independiente: no reemplazan la página del restaurante ni copian el proyecto de otro compañero.
+
+- [Catálogo](productos.html): tarjetas dinámicas, detalle con diálogo, búsqueda, precios, marca, categorías y ordenamiento.
+- [Carrito](carrito.html): persistencia, cantidades, eliminación, vaciado, contador y total.
+- `tienda.js`: funciones flecha documentadas; `productos.css`: estilos responsive compartidos.
+- `misFunciones.js`: documentación de todas las funciones de los ejercicios anteriores.
+- [Documentación generada por JSDoc](docs/index.html).
+
+### Decisiones y límites
+
+Se usan los contenidos de las tres clases: DOM, eventos, arrays, `filter`, `sort`, `splice`, JSON, `localStorage` e `Intl.NumberFormat`. Cada producto conserva un identificador propio para que ordenar o filtrar no cambie qué artículo se agrega. El carrito guarda solamente identificador y cantidad; los precios se toman del catálogo.
+
+Las cantidades deben ser enteras de 1 a 99, también al acumular el mismo producto. La página no procesa pagos reales. Las imágenes se enlazan desde los materiales oficiales de la cátedra.
+
+Se usan `showModal()` y `close()` para abrir/cerrar el diálogo HTML nativo (Escape también lo cierra), y `try/catch` para tolerar almacenamiento corrupto o bloqueado. Estos recursos complementan los ejemplos de clase. Las pruebas de Node son herramientas de verificación, no dependencias de la página.
+
+### Verificación
+
+Desde la raíz del repositorio:
+
+```powershell
+node --test "UNIDAD 3/3-Js/misFunciones.test.js" "UNIDAD 3/3-Js/estructura.test.js" "UNIDAD 3/3-Js/tienda.test.cjs"
+```
+
+La documentación se genera con JSDoc, como pide la consigna:
+
+```powershell
+npm exec --yes --package=jsdoc -- jsdoc "UNIDAD 3/3-Js/misFunciones.js" "UNIDAD 3/3-Js/tienda.js" -d "UNIDAD 3/3-Js/docs"
+```
+
+En esta computadora se generó con el equivalente `pnpm --config.node-linker=hoisted --yes dlx jsdoc`, porque npm no está en el PATH.
+
+Para probar `localStorage`, abrir estas páginas desde un servidor local, no mediante `file://`. Revisar agregar, recargar, cambiar cantidades, eliminar y vaciar; verificar que el detalle corresponda al producto después de ordenar y filtrar.
 
 ## Js (parte I)
 ### Ejercicio: Hola Mundo!

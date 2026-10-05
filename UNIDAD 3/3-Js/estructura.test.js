@@ -33,3 +33,23 @@ test("operaciones muestra los resultados en elementos de texto", () => {
     assert.match(html, /id=["']totalS["']/);
     assert.match(read("misFunciones.js"), /innerHTML/);
 });
+
+test("catálogo y carrito comparten navegación, scripts y estilos", () => {
+    for (const file of ["productos.html", "carrito.html"]) {
+        const html = read(file);
+        assert.match(html, /lang="es"/);
+        assert.match(html, /name="viewport"/);
+        assert.match(html, /href="productos.css"/);
+        assert.match(html, /src="tienda.js" defer/);
+        assert.match(html, /href="productos.html"/);
+        assert.match(html, /href="carrito.html"/);
+        assert.match(html, /id="mensaje-tienda" role="status" aria-live="polite"/);
+        const ids = [...html.matchAll(/\bid="([^"]+)"/g)].map(match => match[1]);
+        assert.equal(new Set(ids).size, ids.length, "No debe haber IDs repetidos");
+        for (const match of html.matchAll(/\bfor="([^"]+)"/g)) {
+            assert.ok(ids.includes(match[1]), "Cada label debe apuntar a un campo existente");
+        }
+    }
+    assert.match(read("productos.html"), /<dialog id="detalle-producto" aria-labelledby="titulo-producto"/);
+    assert.match(read("carrito.html"), /onclick="vaciarCarrito\(\)"/);
+});

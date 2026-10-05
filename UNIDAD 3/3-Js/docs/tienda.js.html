@@ -1,4 +1,32 @@
-const productos = [
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: tienda.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: tienda.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>const productos = [
   {
     id: 1,
     nombre: "Cabezal Sparring",
@@ -91,15 +119,15 @@ const imagenProducto = (producto) =>
  */
 const seleccionarProductos = (filtros) => {
   const lista = productos.filter((producto) =>
-    producto.nombre.toLowerCase().includes(filtros.texto.toLowerCase().trim()) &&
-    producto.precio >= filtros.minimo && producto.precio <= filtros.maximo &&
-    (filtros.marca === "Todas" || producto.marca === filtros.marca) &&
+    producto.nombre.toLowerCase().includes(filtros.texto.toLowerCase().trim()) &amp;&amp;
+    producto.precio >= filtros.minimo &amp;&amp; producto.precio &lt;= filtros.maximo &amp;&amp;
+    (filtros.marca === "Todas" || producto.marca === filtros.marca) &amp;&amp;
     (filtros.categorias.length === 0 || filtros.categorias.includes(producto.categoria))
   );
   lista.sort((a, b) => {
     if (filtros.orden === "precio-desc") return b.precio - a.precio;
     if (filtros.orden === "precio-asc") return a.precio - b.precio;
-    const comparacion = a.nombre.toLowerCase() < b.nombre.toLowerCase() ? -1 :
+    const comparacion = a.nombre.toLowerCase() &lt; b.nombre.toLowerCase() ? -1 :
       a.nombre.toLowerCase() > b.nombre.toLowerCase() ? 1 : 0;
     return filtros.orden === "nombre-desc" ? -comparacion : comparacion;
   });
@@ -113,16 +141,16 @@ const seleccionarProductos = (filtros) => {
  */
 const cargarProductos = (lista) => {
   document.getElementById("contenedor-productos").innerHTML = lista.map((producto) =>
-    `<article class="tarjeta">
-      <img src="${imagenProducto(producto)}" alt="${producto.nombre}">
-      <h2>${producto.nombre}</h2>
-      <p>${producto.marca} · ${producto.categoria}</p>
-      <p class="precio">${formatearPrecio(producto.precio)}</p>
-      <button type="button" onclick="mostrarDetalle(${producto.id})">Ver detalle de ${producto.nombre}</button>
-      <label for="cantidad-${producto.id}">Cantidad de ${producto.nombre}</label>
-      <input id="cantidad-${producto.id}" type="number" min="1" max="99" step="1" value="1">
-      <button type="button" onclick="agregarAlCarrito(${producto.id})">Agregar al carrito</button>
-    </article>`
+    `&lt;article class="tarjeta">
+      &lt;img src="${imagenProducto(producto)}" alt="${producto.nombre}">
+      &lt;h2>${producto.nombre}&lt;/h2>
+      &lt;p>${producto.marca} · ${producto.categoria}&lt;/p>
+      &lt;p class="precio">${formatearPrecio(producto.precio)}&lt;/p>
+      &lt;button type="button" onclick="mostrarDetalle(${producto.id})">Ver detalle de ${producto.nombre}&lt;/button>
+      &lt;label for="cantidad-${producto.id}">Cantidad de ${producto.nombre}&lt;/label>
+      &lt;input id="cantidad-${producto.id}" type="number" min="1" max="99" step="1" value="1">
+      &lt;button type="button" onclick="agregarAlCarrito(${producto.id})">Agregar al carrito&lt;/button>
+    &lt;/article>`
   ).join("");
 };
 
@@ -134,7 +162,7 @@ const filtrarProductos = () => {
   const minimo = Number(document.getElementById("precio-min").value);
   const maximoTexto = document.getElementById("precio-max").value;
   const maximo = maximoTexto === "" ? Infinity : Number(maximoTexto);
-  if (!Number.isFinite(minimo) || minimo < 0 || maximo < minimo || Number.isNaN(maximo)) {
+  if (!Number.isFinite(minimo) || minimo &lt; 0 || maximo &lt; minimo || Number.isNaN(maximo)) {
     alert("Revisá los precios: el mínimo no puede superar al máximo ni ser negativo.");
     return;
   }
@@ -184,7 +212,7 @@ const cerrarDetalle = () => document.getElementById("detalle-producto").close();
  * @param {number} cantidad
  * @returns {boolean}
  */
-const cantidadValida = (cantidad) => Number.isInteger(cantidad) && cantidad >= 1 && cantidad <= 99;
+const cantidadValida = (cantidad) => Number.isInteger(cantidad) &amp;&amp; cantidad >= 1 &amp;&amp; cantidad &lt;= 99;
 
 /**
  * Recupera únicamente registros válidos del navegador.
@@ -251,7 +279,7 @@ const agregarAlCarrito = (id) => {
   const cantidad = Number(campo.value);
   const carrito = leerCarrito();
   const existente = carrito.find((item) => item.id === id);
-  if (!cantidadValida(cantidad) || (existente && !cantidadValida(existente.cantidad + cantidad))) {
+  if (!cantidadValida(cantidad) || (existente &amp;&amp; !cantidadValida(existente.cantidad + cantidad))) {
     alert("Ingresá una cantidad entera entre 1 y 99. El acumulado tampoco puede superar 99.");
     campo.value = "";
     campo.focus();
@@ -282,18 +310,18 @@ const actualizarTotales = (carrito) => {
 const mostrarCarrito = () => {
   const carrito = leerCarrito();
   document.getElementById("mostrar-carrito").innerHTML = carrito.length === 0 ?
-    "<p>Tu carrito está vacío. Podés agregar productos desde el catálogo.</p>" :
+    "&lt;p>Tu carrito está vacío. Podés agregar productos desde el catálogo.&lt;/p>" :
     carrito.map((item) => {
       const producto = productos.find((producto) => producto.id === item.id);
-      return `<article class="tarjeta">
-        <h2>${producto.nombre}</h2>
-        <p>Precio por unidad: ${formatearPrecio(producto.precio)}</p>
-        <label for="unidades-${item.id}">Cantidad de ${producto.nombre}</label>
-        <input id="unidades-${item.id}" type="number" min="1" max="99" step="1"
+      return `&lt;article class="tarjeta">
+        &lt;h2>${producto.nombre}&lt;/h2>
+        &lt;p>Precio por unidad: ${formatearPrecio(producto.precio)}&lt;/p>
+        &lt;label for="unidades-${item.id}">Cantidad de ${producto.nombre}&lt;/label>
+        &lt;input id="unidades-${item.id}" type="number" min="1" max="99" step="1"
           value="${item.cantidad}" onchange="cambiarCantidad(${item.id})">
-        <p>Subtotal: <span id="subtotal-${item.id}">${formatearPrecio(producto.precio * item.cantidad)}</span></p>
-        <button type="button" onclick="eliminarProducto(${item.id})">Eliminar ${producto.nombre}</button>
-      </article>`;
+        &lt;p>Subtotal: &lt;span id="subtotal-${item.id}">${formatearPrecio(producto.precio * item.cantidad)}&lt;/span>&lt;/p>
+        &lt;button type="button" onclick="eliminarProducto(${item.id})">Eliminar ${producto.nombre}&lt;/button>
+      &lt;/article>`;
     }).join("");
   actualizarTotales(carrito);
 };
@@ -347,3 +375,26 @@ const vaciarCarrito = () => {
   mostrarCarrito();
   document.getElementById("mensaje-tienda").textContent = "Carrito vaciado.";
 };
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#actualizarTotales">actualizarTotales</a></li><li><a href="global.html#agregarAlCarrito">agregarAlCarrito</a></li><li><a href="global.html#calcularOperacion">calcularOperacion</a></li><li><a href="global.html#calcularTotal">calcularTotal</a></li><li><a href="global.html#calculateOperations">calculateOperations</a></li><li><a href="global.html#cambiarCantidad">cambiarCantidad</a></li><li><a href="global.html#cantidadValida">cantidadValida</a></li><li><a href="global.html#cargarProductos">cargarProductos</a></li><li><a href="global.html#cerrarDetalle">cerrarDetalle</a></li><li><a href="global.html#contarProductos">contarProductos</a></li><li><a href="global.html#convertUnits">convertUnits</a></li><li><a href="global.html#convertirAngulos">convertirAngulos</a></li><li><a href="global.html#convertirUnidades">convertirUnidades</a></li><li><a href="global.html#degreesToRadians">degreesToRadians</a></li><li><a href="global.html#eliminarProducto">eliminarProducto</a></li><li><a href="global.html#filtrarProductos">filtrarProductos</a></li><li><a href="global.html#formatearPrecio">formatearPrecio</a></li><li><a href="global.html#guardarCarrito">guardarCarrito</a></li><li><a href="global.html#imagenProducto">imagenProducto</a></li><li><a href="global.html#leerCarrito">leerCarrito</a></li><li><a href="global.html#mostrarCarrito">mostrarCarrito</a></li><li><a href="global.html#mostrarDetalle">mostrarDetalle</a></li><li><a href="global.html#mostrarOcultar">mostrarOcultar</a></li><li><a href="global.html#parseNumericInput">parseNumericInput</a></li><li><a href="global.html#radiansToDegrees">radiansToDegrees</a></li><li><a href="global.html#roundTwo">roundTwo</a></li><li><a href="global.html#saludar">saludar</a></li><li><a href="global.html#seleccionarProductos">seleccionarProductos</a></li><li><a href="global.html#vaciarCarrito">vaciarCarrito</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.5</a> on Mon Oct 05 2026 09:52:28 GMT-0300 (hora estándar de Argentina)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

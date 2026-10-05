@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Nicolás Bulacio">
+  <meta name="description" content="Carrito del ejercicio de productos de taekwondo.">
+  <title>Carrito | Ejercicio de tienda</title>
+  <link rel="stylesheet" href="productos.css">
+  <script src="tienda.js" defer></script>
+</head>
+<body onload="mostrarCarrito()">
+  <a class="saltar" href="#contenido">Saltar al contenido</a>
+  <header>
+    <h1>Tienda de taekwondo</h1>
+    <nav aria-label="Navegación principal">
+      <a href="productos.html">Catálogo</a>
+      <a href="carrito.html" aria-current="page">Carrito (<span id="cant-prod">0</span> unidades)</a>
+    </nav>
+  </header>
+  <main id="contenido">
+    <h2>Mi carrito</h2>
+    <noscript>Este ejercicio necesita JavaScript para leer el carrito.</noscript>
+    <p id="mensaje-tienda" role="status" aria-live="polite"></p>
+    <div id="mostrar-carrito" class="catalogo"></div>
+    <section class="resumen" aria-labelledby="titulo-total">
+      <h2 id="titulo-total">Total: <span id="total-carrito">$ 0,00</span></h2>
+      <button id="vaciar-carrito" type="button" onclick="vaciarCarrito()" disabled>Vaciar carrito</button>
+      <a href="productos.html">Seguir agregando productos</a>
+    </section>
+  </main>
+  <footer><p>Ejercicio de JavaScript — Nicolás Bulacio. No se realizan compras ni pagos reales.</p></footer>
+</body>
+</html>
