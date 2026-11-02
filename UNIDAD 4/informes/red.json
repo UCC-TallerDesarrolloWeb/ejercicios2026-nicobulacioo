@@ -1,0 +1,222 @@
+[
+  {
+    "url": "https://www.wikipedia.org/",
+    "finalUrl": "https://www.wikipedia.org/",
+    "title": "Wikipedia",
+    "status": 200,
+    "browser": "155.0.8059.84",
+    "requestHeaders": {
+      "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/jxl,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+      "cache-control": "no-cache",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/155.0.0.0 Safari/537.36"
+    },
+    "documents": [
+      {
+        "url": "https://www.wikipedia.org/",
+        "status": 200,
+        "protocol": "h2",
+        "remoteIPAddress": "195.200.68.224",
+        "timing": {
+          "requestTime": 167561.089971,
+          "proxyStart": -1,
+          "proxyEnd": -1,
+          "dnsStart": 0,
+          "dnsEnd": 74.577,
+          "connectStart": 74.729,
+          "connectEnd": 160.171,
+          "sslStart": 115.857,
+          "sslEnd": 160.165,
+          "workerStart": -1,
+          "workerReady": -1,
+          "workerFetchStart": -1,
+          "workerRespondWithSettled": -1,
+          "sendStart": 160.266,
+          "sendEnd": 160.386,
+          "pushStart": 0,
+          "pushEnd": 0,
+          "receiveHeadersStart": 219.585,
+          "receiveHeadersEnd": 220.004
+        },
+        "headers": {
+          "cache-control": "s-maxage=86400, must-revalidate, max-age=3600",
+          "content-type": "text/html",
+          "etag": "W/\"1dd55-65d54a13c8d00\"",
+          "last-modified": "Thu, 08 Oct 2026 13:58:44 GMT",
+          "server": "ATS/9.2.15",
+          "strict-transport-security": "max-age=106384710; includeSubDomains; preload"
+        }
+      }
+    ],
+    "navigation": {
+      "name": "https://www.wikipedia.org/",
+      "entryType": "navigation",
+      "startTime": 0,
+      "duration": 506.2999999821186,
+      "navigationId": 6760,
+      "initiatorType": "navigation",
+      "deliveryType": "",
+      "nextHopProtocol": "h2",
+      "renderBlockingStatus": "non-blocking",
+      "contentType": "text/html",
+      "contentEncoding": "gzip",
+      "workerStart": 0,
+      "workerRouterEvaluationStart": 0,
+      "workerCacheLookupStart": 0,
+      "workerMatchedSourceType": "",
+      "workerFinalSourceType": "",
+      "redirectStart": 0,
+      "redirectEnd": 0,
+      "fetchStart": 2.9000000059604645,
+      "domainLookupStart": 7.0999999940395355,
+      "domainLookupEnd": 81.59999999403954,
+      "connectStart": 81.59999999403954,
+      "secureConnectionStart": 123,
+      "connectEnd": 167.19999998807907,
+      "requestStart": 167.40000000596046,
+      "responseStart": 226.69999998807907,
+      "firstInterimResponseStart": 0,
+      "finalResponseHeadersStart": 226.69999998807907,
+      "responseEnd": 258.7999999821186,
+      "transferSize": 29550,
+      "encodedBodySize": 29250,
+      "decodedBodySize": 122197,
+      "responseStatus": 200,
+      "serverTiming": [
+        {
+          "name": "cache",
+          "duration": 0,
+          "description": "hit-front"
+        },
+        {
+          "name": "host",
+          "duration": 0,
+          "description": "cp7001"
+        },
+        {
+          "name": "co_id",
+          "duration": 0,
+          "description": "1496324070"
+        }
+      ],
+      "unloadEventStart": 0,
+      "unloadEventEnd": 0,
+      "domInteractive": 503,
+      "domContentLoadedEventStart": 503,
+      "domContentLoadedEventEnd": 504.09999999403954,
+      "domComplete": 506.19999998807907,
+      "loadEventStart": 506.2999999821186,
+      "loadEventEnd": 506.2999999821186,
+      "type": "navigate",
+      "redirectCount": 0,
+      "activationStart": 0,
+      "criticalCHRestart": 0,
+      "notRestoredReasons": null,
+      "confidence": {
+        "randomizedTriggerRate": 0.4994798,
+        "value": "low"
+      }
+    }
+  },
+  {
+    "url": "https://github.com/",
+    "finalUrl": "https://github.com/?locale=es-419",
+    "title": "GitHub · El cambio es constante. GitHub te mantiene a la vanguardia. · GitHub · GitHub",
+    "status": 200,
+    "browser": "155.0.8059.84",
+    "requestHeaders": {
+      "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/jxl,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+      "cache-control": "no-cache",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/155.0.0.0 Safari/537.36"
+    },
+    "documents": [
+      {
+        "url": "https://github.com/?locale=es-419",
+        "status": 200,
+        "protocol": "h2",
+        "remoteIPAddress": "4.228.31.150",
+        "timing": {
+          "requestTime": 167562.398657,
+          "proxyStart": -1,
+          "proxyEnd": -1,
+          "dnsStart": -1,
+          "dnsEnd": -1,
+          "connectStart": -1,
+          "connectEnd": -1,
+          "sslStart": -1,
+          "sslEnd": -1,
+          "workerStart": -1,
+          "workerReady": -1,
+          "workerFetchStart": -1,
+          "workerRespondWithSettled": -1,
+          "sendStart": 0.226,
+          "sendEnd": 0.411,
+          "pushStart": 0,
+          "pushEnd": 0,
+          "receiveHeadersStart": 344.571,
+          "receiveHeadersEnd": 344.819
+        },
+        "headers": {
+          "cache-control": "max-age=0, private, must-revalidate",
+          "content-security-policy": "default-src 'none'; base-uri 'self'; child-src github.githubassets.com github.com/assets-cdn/worker/ github.com/assets/ gist.github.com/assets-cdn/worker/; connect-src 'self' uploads.github.com www.githubstatus.com collector.github.com raw.githubusercontent.com api.github.com github-cloud.s3.amazonaws.com github-production-repository-file-5c1aeb.s3.amazonaws.com github-production-upload-manifest-file-7fdce7.s3.amazonaws.com github-production-user-asset-6210df.s3.amazonaws.com *.rel.tunnels.api.visualstudio.com wss://*.rel.tunnels.api.visualstudio.com github.githubassets.com objects-origin.githubusercontent.com copilot-proxy.githubusercontent.com proxy.individual.githubcopilot.com proxy.business.githubcopilot.com proxy.enterprise.githubcopilot.com *.actions.githubusercontent.com wss://*.actions.githubusercontent.com productionresultssa0.blob.core.windows.net productionresultssa1.blob.core.windows.net productionresultssa2.blob.core.windows.net productionresultssa3.blob.core.windows.net productionresultssa4.blob.core.windows.net productionresultssa5.blob.core.windows.net productionresultssa6.blob.core.windows.net productionresultssa7.blob.core.windows.net productionresultssa8.blob.core.windows.net productionresultssa9.blob.core.windows.net productionresultssa10.blob.core.windows.net productionresultssa11.blob.core.windows.net productionresultssa12.blob.core.windows.net productionresultssa13.blob.core.windows.net productionresultssa14.blob.core.windows.net productionresultssa15.blob.core.windows.net productionresultssa16.blob.core.windows.net productionresultssa17.blob.core.windows.net productionresultssa18.blob.core.windows.net productionresultssa19.blob.core.windows.net github-production-repository-image-32fea6.s3.amazonaws.com github-production-release-asset-2e65be.s3.amazonaws.com insights.github.com wss://alive.github.com wss://alive-staging.github.com api.githubcopilot.com api.individual.githubcopilot.com api.business.githubcopilot.com api.enterprise.githubcopilot.com wss://production-copilot-host.webpubsub.azure.com api.github.com/cmc_internal/api/ edge.fullstory.com rs.fullstory.com; font-src github.githubassets.com; form-action 'self' github.com gist.github.com copilot-workspace.githubnext.com objects-origin.githubusercontent.com; frame-ancestors 'none'; frame-src viewscreen.githubusercontent.com notebooks.githubusercontent.com www.youtube-nocookie.com; img-src 'self' data: blob: github.githubassets.com media.githubusercontent.com camo.githubusercontent.com identicons.github.com avatars.githubusercontent.com private-avatars.githubusercontent.com github-cloud.s3.amazonaws.com objects.githubusercontent.com release-assets.githubusercontent.com secured-user-images.githubusercontent.com user-images.githubusercontent.com private-user-images.githubusercontent.com opengraph.githubassets.com repository-images.githubusercontent.com marketplace-screenshots.githubusercontent.com copilotprodattachments.blob.core.windows.net/github-production-copilot-attachments/ github-production-user-asset-6210df.s3.amazonaws.com customer-stories-feed.github.com spotlights-feed.github.com explore-feed.github.com *.googleusercontent.com objects-origin.githubusercontent.com *.githubusercontent.com images.ctfassets.net/8aevphvgewt8/; manifest-src 'self'; media-src github.com user-images.githubusercontent.com secured-user-images.githubusercontent.com private-user-images.githubusercontent.com github-production-user-asset-6210df.s3.amazonaws.com gist.github.com github.githubassets.com assets.ctfassets.net/8aevphvgewt8/ videos.ctfassets.net/8aevphvgewt8/; script-src github.githubassets.com 'sha256-tSjmyPUky1KbRZ0fw9VUil3wFEbeM82rtbJDygGJAXw='; style-src 'unsafe-inline' github.githubassets.com; upgrade-insecure-requests; worker-src github.githubassets.com github.com/assets-cdn/worker/ github.com/assets/ gist.github.com/assets-cdn/worker/",
+          "content-type": "text/html; charset=utf-8",
+          "etag": "W/\"b175a87143b1010ed122443a4a8d9c83\"",
+          "server": "github.com",
+          "strict-transport-security": "max-age=31536000; includeSubdomains; preload"
+        }
+      }
+    ],
+    "navigation": {
+      "name": "https://github.com/?locale=es-419",
+      "entryType": "navigation",
+      "startTime": 0,
+      "duration": 1230.5,
+      "navigationId": 8045,
+      "initiatorType": "navigation",
+      "deliveryType": "",
+      "nextHopProtocol": "h2",
+      "renderBlockingStatus": "non-blocking",
+      "contentType": "text/html",
+      "contentEncoding": "gzip",
+      "workerStart": 0,
+      "workerRouterEvaluationStart": 0,
+      "workerCacheLookupStart": 0,
+      "workerMatchedSourceType": "",
+      "workerFinalSourceType": "",
+      "redirectStart": 0.9000000059604645,
+      "redirectEnd": 169.90000000596046,
+      "fetchStart": 169.90000000596046,
+      "domainLookupStart": 169.90000000596046,
+      "domainLookupEnd": 169.90000000596046,
+      "connectStart": 169.90000000596046,
+      "secureConnectionStart": 169.90000000596046,
+      "connectEnd": 169.90000000596046,
+      "requestStart": 171,
+      "responseStart": 515.4000000059605,
+      "firstInterimResponseStart": 0,
+      "finalResponseHeadersStart": 515.4000000059605,
+      "responseEnd": 623.4000000059605,
+      "transferSize": 119376,
+      "encodedBodySize": 119076,
+      "decodedBodySize": 575635,
+      "responseStatus": 200,
+      "serverTiming": [],
+      "unloadEventStart": 0,
+      "unloadEventEnd": 0,
+      "domInteractive": 717.6999999880791,
+      "domContentLoadedEventStart": 1225.699999988079,
+      "domContentLoadedEventEnd": 1225.9000000059605,
+      "domComplete": 1227.5999999940395,
+      "loadEventStart": 1229.2999999821186,
+      "loadEventEnd": 1230.5,
+      "type": "navigate",
+      "redirectCount": 1,
+      "activationStart": 0,
+      "criticalCHRestart": 0,
+      "notRestoredReasons": null,
+      "confidence": {
+        "randomizedTriggerRate": 0.4994798,
+        "value": "low"
+      }
+    }
+  }
+]
