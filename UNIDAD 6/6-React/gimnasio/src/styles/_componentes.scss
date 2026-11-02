@@ -1,0 +1,104 @@
+@use 'variables' as v;
+@mixin boton($fondo, $texto) {
+  background: $fondo;
+  color: $texto;
+  border: 1px solid $fondo;
+  border-radius: 0.35rem;
+  padding: 0.7rem 1rem;
+}
+.boton {
+  @include boton(v.$azul, #fff);
+  display: inline-block;
+  text-decoration: none;
+  font-weight: 600;
+  cursor: pointer;
+  &:hover {
+    background: #12394c;
+  }
+  &:disabled {
+    background: #d6e5dd;
+    color: #214a32;
+    border-color: #adc7b7;
+    cursor: default;
+  }
+  &.secundario {
+    @include boton(#fff, v.$azul);
+    border-color: v.$linea;
+  }
+}
+.grilla {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.5rem;
+}
+.card {
+  overflow: hidden;
+  background: #fff;
+  border: 1px solid v.$linea;
+  border-radius: 0.6rem;
+  img {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 8 / 5;
+    object-fit: cover;
+  }
+  h2 {
+    margin: 0 0 0.25rem;
+    font-size: 1.5rem;
+  }
+}
+.card-contenido {
+  padding: 1.5rem;
+}
+.subtitulo {
+  margin-top: 0;
+  color: #4b6371;
+}
+.horario {
+  font-weight: 600;
+}
+.login {
+  width: min(30rem, 100%);
+  margin: 1rem auto 3rem;
+  padding: 2rem;
+  background: #fff;
+  border: 1px solid v.$linea;
+  border-radius: 0.6rem;
+  h1 {
+    font-size: 2rem;
+  }
+  form {
+    display: grid;
+    gap: 0.7rem;
+  }
+  input {
+    width: 100%;
+    border: 1px solid #718b99;
+    border-radius: 0.3rem;
+    padding: 0.75rem;
+    margin-bottom: 0.6rem;
+  }
+}
+.ayuda {
+  font-size: 0.9rem;
+  padding: 0.8rem;
+  background: #edf3f6;
+}
+.error {
+  color: #8c2424;
+}
+.confirmacion {
+  color: #214a32;
+  background: #d6e5dd;
+  padding: 1rem;
+  border-radius: 0.4rem;
+}
+@media (max-width: 42rem) {
+  .grilla {
+    grid-template-columns: 1fr;
+  }
+  .login {
+    padding: 1.4rem;
+  }
+}
