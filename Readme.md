@@ -11,6 +11,7 @@
 - `UNIDAD 1`: filminas de Introducción y Herramientas de Desarrollo, Git y Git parte II. Incluye la guía `GUIA_PARCIALITO_U1.md`.
 - `UNIDAD 2`: filminas y ejercicios de HTML, CSS y prototipado. Incluye los entregables del proyecto de restaurante.
 - `UNIDAD 3`: filminas JavaScript partes I, II y III, y ejercicios independientes.
+- `UNIDAD 4`: guía del navegador, consignas con evidencia de Network/Axe/Lighthouse y práctica para el parcialito. La clase original permanece en `U4_navegador.html`, en la raíz.
 - `UNIDAD 5`: ejercicios de Bootstrap y SASS.
 - `UNIDAD 6`: ejercicios de React.
 - `UNIDAD 7`: ejercicios de Backend y APIs.
@@ -20,6 +21,9 @@
 ## Unidad 1: Introducción y Herramientas de Desarrollo
 -  [x] Readme.md — presentación personal en [myreadme.md](myreadme.md), recuperada de la rama unidad1.
 -  [x] .gitignore
+-  [x] Práctica de add/reset/stash/checkout/amend y ramas en un repositorio temporal.
+
+Las actividades personales o grupales de Jira, instalaciones/licencias y configuración de cuentas se distinguen de los ejercicios de código; no se dan por realizadas con archivos.
 
 ## Unidad 2: Fundamentos de HTML5 y CSS3
 
@@ -86,31 +90,43 @@
 El catálogo y carrito están en [productos.html](UNIDAD%203/3-Js/productos.html) y [carrito.html](UNIDAD%203/3-Js/carrito.html). La carpeta de prototipado conserva una etapa previa: consultar su README para distinguirla del proyecto grupal vigente. No se marcan unidades futuras ni auditorías AXE/Lighthouse sin haberlas realizado.
 
 ## Unidad 4: Funcionamiento del Navegador y Herramientas de Desarrollo
--  [ ] Checkeo de accesiilidad: AXE
--  [ ] Checkeo de Lighthouse: accesibilidad, CEO, performance, buenas prácticas
+-  [x] Comparación de red y cabeceras: Wikipedia y GitHub — ver límites de tiempos disponibles en el informe.
+-  [x] Chequeo de accesibilidad: Axe — ejecutado con axe-core; contraste pendiente de revisión manual.
+-  [x] Chequeo de Lighthouse: accesibilidad, SEO, performance y buenas prácticas — Desktop y Mobile.
+
+Resultados y evidencia en [consignas U4](UNIDAD%204/CONSIGNAS_RESUELTAS_U4.md). Se usaron los motores mediante automatización; el paso de instalar y usar los plugins en el perfil personal no se realizó. Material de estudio: [guía U4](UNIDAD%204/GUIA_PARCIALITO_U4.md) y [práctica de 30 preguntas](UNIDAD%204/PRACTICA_PARCIALITO_U4.md).
 
 ## Unidad 5: Frameworks y Preprocesadores CSS
 
 ### BootStrap
--  [ ] Instagram
--  [ ] Componente para selección de vuelos
--  [ ] Timeline
--  [ ] Componente Perfil
--  [ ] Youtube
+-  [x] Instagram
+-  [x] Componente para selección de vuelos
+-  [x] Timeline
+-  [x] Componente Perfil
+-  [x] Youtube
 
 ### SASS
--  [ ] Sass básico
--  [ ] Diseño de Interiores
+-  [x] Sass básico
+-  [x] Diseño de Interiores
+
+### Node y herramientas
+-  [x] package.json y package-lock.json
+-  [x] ESLint y Prettier
+-  [x] Funciones documentadas y generación de JSDoc
+
+Las entregas se abren desde [Bootstrap](UNIDAD%205/4-Bootstrap/index.html), [Sass básico](UNIDAD%205/5-SASS/index.html) e [Interiores](UNIDAD%205/5-SASS/interiores/index.html). Las consignas sin capturas se resolvieron con una interpretación documentada, no con una reproducción visual verificada.
 
 ## Unidad 6: Frameworks de JavaScript: React, Vue y Angular
--  [ ] Instalación de React Usando Vite
--  [ ] Login Básico
--  [ ] Redirección de Rutas
--  [ ] Outlet
--  [ ] Estructura del Proyecto
--  [ ] Imágenes
--  [ ] Children
+-  [x] Instalación de React Usando Vite
+-  [x] Login Básico
+-  [x] Redirección de Rutas
+-  [x] Outlet
+-  [x] Estructura del Proyecto
+-  [x] Imágenes
+-  [x] Children
 
+
+La aplicación está en [gimnasio](UNIDAD%206/6-React/gimnasio/README.md). Usuario de práctica: admin/admin. El informe [ESTADO_U1_U6](docs/ESTADO_U1_U6.md) conserva las comprobaciones y los límites de las actividades manuales.
 
 ## Unidad 7: Backend y APIs
 -  [ ] Mock del Backend
