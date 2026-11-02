@@ -31,7 +31,9 @@ test('Bootstrap: vuelos valida origen y selecciona una opción de ida', async ({
 }) => {
   await page.goto(bootstrap + 'ej_vuelos.html');
   await page.getByLabel('Solo ida').check();
-  await page.getByLabel('Fecha de salida', { exact: true }).fill('2027-01-10');
+  await page
+    .getByLabel('Fecha de salida', { exact: true })
+    .fill(String(new Date().getFullYear() + 1) + '-01-10');
   await expect(page.getByLabel('Fecha de regreso')).toBeDisabled();
   await page.getByLabel('Destino', { exact: true }).selectOption('Córdoba');
   await page.getByRole('button', { name: 'Buscar vuelos' }).click();
