@@ -4,7 +4,10 @@
  * @param {string|number} value - Valor ingresado por el usuario.
  * @returns {number} Numero convertido o NaN si la entrada no es valida.
  */
-const parseNumericInput = value => Number(String(value).trim().replace(",", "."));
+const parseNumericInput = value => {
+    const text = String(value).trim().replace(",", ".");
+    return text === "" ? NaN : Number(text);
+};
 
 /**
  * Redondea un número a dos decimales.

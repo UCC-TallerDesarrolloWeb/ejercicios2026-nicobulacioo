@@ -13,6 +13,13 @@ test("parseNumericInput acepta coma decimal", () => {
     assert.equal(parseNumericInput("1,5"), 1.5);
 });
 
+test("los campos vacíos no se interpretan como cero", () => {
+    assert.equal(calculateOperations("", "2"), null);
+    assert.equal(calculateOperations("8", "   "), null);
+    assert.equal(convertUnits("metro", ""), null);
+    assert.equal(calculateOperations("0", "2").suma, 2);
+});
+
 test("convertUnits convierte metros y redondea a dos decimales", () => {
     assert.deepEqual(convertUnits("metro", "1"), {
         metro: 1,
