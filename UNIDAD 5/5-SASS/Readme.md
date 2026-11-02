@@ -1,5 +1,20 @@
 ## Unidad 5: Frameworks y Preprocesadores CSS
 
+## Entrega y ejecución
+- [Sass básico](index.html): variables en _variables.scss, anidación en _componentes.scss y mixin de fondo/texto en _mixins.scss.
+- [Diseño de interiores](interiores/index.html): header, nav, section y footer, SCSS modular y ajustes en _mobile.scss.
+
+Desde esta carpeta:
+```powershell
+npm install
+npm run build
+npm run watch
+```
+
+El build genera styles.css y interiores/css/styles.css. Los CSS compilados se incluyen para abrir las páginas sin instalar herramientas. Se usa @use; el módulo mobile exporta un mixin que se incluye después de desktop para respetar la cascada.
+
+## Consignas originales
+
 ### Ejercicio: Sass básico
 
 1. Crea un archivo styles.scss

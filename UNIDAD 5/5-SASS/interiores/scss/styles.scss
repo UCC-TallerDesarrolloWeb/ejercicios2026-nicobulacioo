@@ -1,0 +1,124 @@
+@use "variables" as v;
+@use "mobile";
+
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  color: v.$tinta;
+  background: v.$fondo;
+  font:
+    1rem/1.65 Arial,
+    sans-serif;
+}
+img {
+  width: 100%;
+  display: block;
+  height: auto;
+}
+a {
+  color: inherit;
+}
+:focus-visible {
+  outline: 3px solid #945418;
+  outline-offset: 5px;
+}
+.contenedor {
+  width: min(75rem, 90%);
+  margin-inline: auto;
+}
+.cabecera {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-block: 1.5rem;
+  border-bottom: 1px solid #c8d5d6;
+}
+.marca {
+  font:
+    bold 1.7rem Georgia,
+    serif;
+  text-decoration: none;
+}
+.navegacion {
+  display: flex;
+  gap: 2rem;
+  a {
+    text-decoration: none;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+.presentacion {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  align-items: center;
+  gap: 4rem;
+  padding-block: 4rem;
+}
+h1,
+h2,
+h3 {
+  font-family: Georgia, serif;
+  line-height: 1.15;
+  font-weight: normal;
+}
+h1 {
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  margin: 0 0 1.5rem;
+}
+h2 {
+  font-size: 2.2rem;
+}
+h3 {
+  font-size: 1.5rem;
+}
+p {
+  max-width: 65ch;
+}
+.boton {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.8rem 1.2rem;
+  color: v.$blanco;
+  background: v.$azul;
+  text-decoration: none;
+  &:hover {
+    background: v.$tinta;
+  }
+}
+.ambientes {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin-bottom: 4rem;
+}
+figure {
+  margin: 0;
+  background: v.$blanco;
+  figcaption {
+    padding: 1.5rem;
+    border-bottom: 3px solid v.$madera;
+  }
+  h3 {
+    margin: 0;
+  }
+}
+.contacto {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+  padding: 2rem 0;
+  border-top: 1px solid #c8d5d6;
+}
+.pie {
+  background: v.$tinta;
+  color: v.$blanco;
+  padding: 1.5rem 0;
+}
+
+// Cargar los ajustes después de desktop conserva la cascada.
+@include mobile.ajustes;

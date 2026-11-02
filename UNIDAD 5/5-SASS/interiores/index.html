@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="Nicolás Bulacio" />
+    <title>Habitar · Diseño de interiores</title>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <header class="cabecera contenedor" id="inicio">
+      <a class="marca" href="#inicio">Habitar</a>
+      <nav class="navegacion" aria-label="Principal">
+        <a href="#ambientes">Ambientes</a
+        ><a href="#propuesta">Nuestra propuesta</a
+        ><a href="#contacto">Contacto</a>
+      </nav>
+    </header>
+    <main class="contenedor">
+      <section class="presentacion" id="propuesta" aria-labelledby="titulo">
+        <div>
+          <h1 id="titulo">Espacios para vivir a tu manera.</h1>
+          <p>
+            La luz, los materiales y los objetos que elegimos cambian cómo
+            habitamos un lugar. Diseñamos ambientes cómodos, simples y cercanos.
+          </p>
+          <a class="boton" href="#ambientes">Explorar ambientes</a>
+        </div>
+        <img
+          src="imagenes/sala.svg"
+          alt="Sala con sillón azul, mesa de madera y luz natural"
+        />
+      </section>
+      <section id="ambientes" aria-labelledby="titulo-ambientes">
+        <h2 id="titulo-ambientes">Dos formas de habitar</h2>
+        <div class="ambientes">
+          <figure>
+            <img
+              src="imagenes/sala.svg"
+              loading="lazy"
+              alt="Living con sillón azul y plantas junto a una ventana"
+            />
+            <figcaption>
+              <h3>Un lugar para encontrarse</h3>
+              <p>
+                Texturas naturales, luz cálida y muebles pensados para
+                compartir.
+              </p>
+            </figcaption>
+          </figure>
+          <figure>
+            <img
+              src="imagenes/estudio.svg"
+              loading="lazy"
+              alt="Estudio con escritorio, biblioteca y una silla"
+            />
+            <figcaption>
+              <h3>Un rincón para crear</h3>
+              <p>Orden y espacio para concentrarse sin perder comodidad.</p>
+            </figcaption>
+          </figure>
+        </div>
+      </section>
+      <section class="contacto" id="contacto">
+        <div>
+          <h2>Construido con Sass</h2>
+          <p>
+            Práctica académica de diseño de interiores: estructura semántica,
+            módulos y adaptación móvil.
+          </p>
+        </div>
+        <a href="../index.html">Volver a Sass básico</a>
+      </section>
+    </main>
+    <footer class="pie">
+      <div class="contenedor">
+        Habitar · Proyecto de práctica · Nicolás Bulacio
+      </div>
+    </footer>
+  </body>
+</html>
