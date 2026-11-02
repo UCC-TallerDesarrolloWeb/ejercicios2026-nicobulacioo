@@ -1,5 +1,22 @@
 ## Unidad 5: Frameworks y Preprocesadores CSS
 
+## Entrega
+Abrir [index.html](index.html) para acceder a los cinco ejercicios. Bootstrap y sus imágenes se conservan localmente.
+
+**Aclaración:** no entendimos con certeza a qué imágenes se refieren «el siguiente componente» y «la siguiente pantalla», porque no están incluidas en los archivos. Suponemos que se pide una maqueta representativa de cada interfaz construida con Bootstrap. Comparamos alternativas y elegimos esa interpretación; el análisis está en [INTERPRETACION_CONSIGNAS.md](INTERPRETACION_CONSIGNAS.md).
+
+| Ejercicio | Archivo |
+| --- | --- |
+| Instagram | [ej_instagram.html](ej_instagram.html) |
+| Selección de vuelos | [ej_vuelos.html](ej_vuelos.html) |
+| Timeline | [ej_timeline.html](ej_timeline.html) |
+| Perfil | [ej_perfil.html](ej_perfil.html) |
+| YouTube | [ej_youtube.html](ej_youtube.html) |
+
+Se comprobó la adaptación a 390 y 1280 px, el cambio de columnas en md, el formulario de vuelos y los filtros de videos.
+
+## Consignas originales
+
 ### Ejercicio: Instagram
 
 Empleando Ejercicios-CSS el template ej_instagram, el contenido debe visualizarse:
