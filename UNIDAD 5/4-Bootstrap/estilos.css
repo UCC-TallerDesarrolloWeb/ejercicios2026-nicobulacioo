@@ -1,0 +1,65 @@
+body {
+  background: #f5f7fa;
+  color: #182d42;
+}
+main {
+  min-height: 75vh;
+}
+h1,
+h2,
+h3 {
+  text-wrap: balance;
+}
+:focus-visible {
+  outline: 3px solid #8c4300;
+  outline-offset: 4px;
+}
+.galeria img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.timeline {
+  min-width: 42rem;
+  table-layout: fixed;
+}
+.timeline th:first-child {
+  width: 32%;
+}
+.timeline td {
+  vertical-align: middle;
+}
+.timeline .progress {
+  height: 1.5rem;
+  background: #e5eaf1;
+}
+.avatar {
+  width: 7rem;
+  height: 7rem;
+  object-fit: cover;
+  border: 4px solid #fff;
+}
+.portada {
+  min-height: 8rem;
+  background: #234f6a;
+}
+.video-thumb {
+  aspect-ratio: 16 / 9;
+  width: 100%;
+  object-fit: cover;
+}
+.video-link {
+  color: inherit;
+  text-decoration: none;
+}
+.video-link:hover h2 {
+  text-decoration: underline;
+}
+.badge {
+  white-space: normal;
+  text-align: start;
+}
+input,
+select {
+  min-width: 0;
+}

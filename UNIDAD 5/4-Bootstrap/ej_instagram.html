@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="Nicolás Bulacio" />
+    <title>Instagram · Prácticas Bootstrap</title>
+    <link rel="stylesheet" href="vendor/bootstrap.min.css" />
+    <link rel="stylesheet" href="estilos.css" />
+    <script src="vendor/bootstrap.bundle.min.js" defer></script>
+  </head>
+  <body>
+    <a class="visually-hidden-focusable p-2" href="#contenido"
+      >Saltar al contenido</a
+    >
+    <header class="border-bottom bg-white">
+      <nav
+        class="navbar navbar-expand-md container"
+        aria-label="Prácticas de Bootstrap"
+      >
+        <a class="navbar-brand fw-bold" href="index.html">Unidad 5</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#menu"
+          aria-controls="menu"
+          aria-expanded="false"
+          aria-label="Abrir menú"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="menu">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a
+                class="nav-link active"
+                aria-current="page"
+                href="ej_instagram.html"
+                >Instagram</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="ej_vuelos.html">Vuelos</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="ej_timeline.html">Timeline</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="ej_perfil.html">Perfil</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="ej_youtube.html">YouTube</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <main class="container py-4 py-md-5" id="contenido">
+      <div
+        class="d-flex flex-wrap justify-content-between align-items-end gap-2 mb-4"
+      >
+        <div>
+          <h1 class="mb-1">Galería de publicaciones</h1>
+          <p class="text-secondary mb-0">Entrenamiento, torneos y comunidad.</p>
+        </div>
+        <span class="badge text-bg-primary">9 publicaciones</span>
+      </div>
+      <div class="row row-cols-1 row-cols-md-3 g-3 galeria">
+        <div class="col">
+          <img
+            class="img-fluid rounded"
+            src="assets/instagram-01.png"
+            alt="Publicación deportiva 1 del material de clase"
+          />
+        </div>
+        <div class="col">
+          <img
+            class="img-fluid rounded"
+            src="assets/instagram-02.png"
+            alt="Publicación deportiva 2 del material de clase"
+          />
+        </div>
+        <div class="col">
+          <img
+            class="img-fluid rounded"
+            src="assets/instagram-03.png"
+            alt="Publicación deportiva 3 del material de clase"
+          />
+        </div>
+        <div class="col">
+          <img
+            class="img-fluid rounded"
+            src="assets/instagram-04.png"
+            alt="Publicación deportiva 4 del material de clase"
+            loading="lazy"
+          />
+        </div>
+        <div class="col">
+          <img
+            class="img-fluid rounded"
+            src="assets/instagram-05.png"
+            alt="Publicación deportiva 5 del material de clase"
+            loading="lazy"
+          />
+        </div>
+        <div class="col">
+          <img
+            class="img-fluid rounded"
+            src="assets/instagram-06.png"
+            alt="Publicación deportiva 6 del material de clase"
+            loading="lazy"
+          />
+        </div>
+        <div class="col">
+          <img
+            class="img-fluid rounded"
+            src="assets/instagram-07.png"
+            alt="Publicación deportiva 7 del material de clase"
+            loading="lazy"
+          />
+        </div>
+        <div class="col">
+          <img
+            class="img-fluid rounded"
+            src="assets/instagram-08.png"
+            alt="Publicación deportiva 8 del material de clase"
+            loading="lazy"
+          />
+        </div>
+        <div class="col">
+          <img
+            class="img-fluid rounded"
+            src="assets/instagram-09.png"
+            alt="Publicación deportiva 9 del material de clase"
+            loading="lazy"
+          />
+        </div>
+      </div>
+    </main>
+    <footer class="container border-top py-3 text-secondary">
+      <small>Ejercicios de Bootstrap · Nicolás Bulacio</small>
+    </footer>
+  </body>
+</html>
