@@ -1,5 +1,8 @@
 ## Unidad 2: Fundamentos de HTML5 y CSS3
 
+## Versiones y revisión
+Se conserva [ej_columnas_inline.html](ej_columnas_inline.html) para la primera práctica de estilos en línea y [ej_columnas.html](ej_columnas.html) para estilos incrustados y columnas. La revisión corrige el modelo de cajas para que float + 50% mantenga las dos columnas en una fila.
+
 ### Ejercicio: Propiedades tipográficas
 
 Empleando el template **ej_columnas**, agregue estilo en línea para cambiar:

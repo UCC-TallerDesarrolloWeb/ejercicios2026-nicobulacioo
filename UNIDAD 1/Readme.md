@@ -11,6 +11,10 @@
 - Readme.md: agregar secciones de autor y contenido, autores en items, apellidos en negrita, link del aula virtual, tabla de contacto y emoji.
 - `.gitignore`: crear el archivo, incluir la carpeta a ignorar y subir los cambios al repositorio remoto.
 
+## Práctica complementaria verificada
+
+[PRACTICA_GIT.md](PRACTICA_GIT.md) documenta los comandos de staging, stash, checkout, reset soft, amend y ramas. El script practica-git.cjs los ejecuta en un repositorio temporal independiente y verifica sus efectos sin modificar el historial de la materia.
+
 ## Para el parcialito
 
 Usa `GUIA_PARCIALITO_U1_MEJORADA.md` como guia principal para multiple choice. Esta ordena lo que toman por definiciones, diferencias, ejemplos de herramientas y trampas comunes.
