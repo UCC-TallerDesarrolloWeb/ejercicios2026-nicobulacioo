@@ -1,0 +1,29 @@
+/* Versión CSS tradicional equivalente, conservada para comparar con la adaptación Sass.
+   La aplicación final importa styles.scss. */
+.login {
+  width: min(30rem, 100%);
+  margin: 1rem auto 3rem;
+  padding: 2rem;
+  background: #fff;
+  border: 1px solid #c5d5dd;
+  border-radius: 0.6rem;
+}
+.login h1 {
+  font-size: 2rem;
+}
+.login form {
+  display: grid;
+  gap: 0.7rem;
+}
+.login input {
+  width: 100%;
+  border: 1px solid #718b99;
+  border-radius: 0.3rem;
+  padding: 0.75rem;
+  margin-bottom: 0.6rem;
+}
+@media (max-width: 42rem) {
+  .login {
+    padding: 1.4rem;
+  }
+}

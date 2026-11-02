@@ -1,5 +1,17 @@
 ## Unidad 6: Frameworks de JavaScript: React, Vue y Angular
 
+## Entrega
+La aplicación está en [gimnasio](gimnasio/README.md). Desde esa carpeta:
+```powershell
+npm install
+npm run dev
+```
+Abrir http://localhost:5173. Usuario y contraseña de práctica: **admin / admin**.
+
+Se implementaron las siete prácticas. El README de la aplicación relaciona cada consigna con sus archivos, explica public/assets, props/children, CSS/SASS y el alcance del login. `npm test` ejecuta las pruebas de navegador con Chrome instalado.
+
+## Consignas originales
+
 ### Ejercicio: Instalación de React Usando Vite
 1. Ejecutar el siguiente comando para inicializar el proyecto:
 ```bash

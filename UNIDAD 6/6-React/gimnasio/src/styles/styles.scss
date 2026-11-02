@@ -1,0 +1,125 @@
+@use 'variables' as v;
+@use 'componentes';
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  font:
+    1rem/1.6 'Segoe UI',
+    Arial,
+    sans-serif;
+  color: v.$tinta;
+  background: v.$fondo;
+}
+a {
+  color: v.$azul;
+}
+button,
+input {
+  font: inherit;
+}
+:focus-visible {
+  outline: 3px solid v.$acento;
+  outline-offset: 4px;
+}
+.contenedor {
+  width: min(68rem, 92%);
+  margin-inline: auto;
+}
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+main {
+  flex: 1;
+  padding-block: 2rem 4rem;
+}
+h1 {
+  max-width: 24ch;
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  line-height: 1.1;
+  letter-spacing: -0.025em;
+  margin-top: 0;
+}
+h2 {
+  line-height: 1.2;
+}
+p {
+  max-width: 70ch;
+}
+.cabecera {
+  background: #fff;
+  border-bottom: 1px solid v.$linea;
+}
+.cabecera-interior {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  padding-block: 1rem;
+}
+.marca {
+  font-size: 1.5rem;
+  font-weight: 800;
+  text-decoration: none;
+  margin-right: auto;
+}
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+  a {
+    text-decoration: none;
+  }
+  a.active {
+    text-decoration: underline;
+    text-underline-offset: 0.4rem;
+    font-weight: 600;
+  }
+}
+.sesion {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  font-size: 0.9rem;
+}
+.introduccion {
+  padding-block: 1rem 2rem;
+  p {
+    font-size: 1.1rem;
+  }
+}
+.pie {
+  border-top: 1px solid v.$linea;
+  padding-block: 1.3rem;
+  background: #fff;
+  p {
+    margin: 0.2rem 0;
+  }
+}
+.nota {
+  font-size: 0.85rem;
+  color: #4b6371;
+}
+.saltar {
+  position: absolute;
+  left: -100rem;
+  &:focus {
+    left: 1rem;
+    top: 1rem;
+    z-index: 10;
+    padding: 0.75rem;
+    background: #fff;
+  }
+}
+@media (max-width: 42rem) {
+  .cabecera-interior {
+    gap: 0.9rem;
+  }
+  nav {
+    width: 100%;
+  }
+}
