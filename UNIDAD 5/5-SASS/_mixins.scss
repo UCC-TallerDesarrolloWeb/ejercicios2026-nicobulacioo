@@ -1,0 +1,7 @@
+// Mixin parametrizado reutilizado en botones y mensajes.
+@mixin superficie($fondo, $letras) {
+  background-color: $fondo;
+  color: $letras;
+  padding: 0.8rem 1.2rem;
+  border-radius: 0.4rem;
+}

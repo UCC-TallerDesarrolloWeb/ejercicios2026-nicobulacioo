@@ -1,0 +1,15 @@
+{
+  "name": "ucc-ejercicios-sass",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Prácticas de Sass básico y diseño de interiores",
+  "scripts": {
+    "build": "sass --no-source-map styles.scss styles.css && sass --no-source-map interiores/scss/styles.scss interiores/css/styles.css",
+    "watch": "sass --watch styles.scss:styles.css interiores/scss/styles.scss:interiores/css/styles.css"
+  },
+  "devDependencies": {
+    "sass": "^1.93.2"
+  }
+}
+

@@ -1,0 +1,28 @@
+@use "variables" as v;
+@use "mixins" as m;
+
+// Anidación separada del archivo principal, limitada a dos niveles.
+.tarjeta {
+  padding: v.$espacio * 2;
+  background: v.$blanco;
+  border: 1px solid #bbd0da;
+  border-radius: 0.6rem;
+  h2 {
+    color: v.$principal;
+    margin-top: 0;
+  }
+  p {
+    line-height: 1.6;
+  }
+}
+.boton {
+  @include m.superficie(v.$principal, v.$blanco);
+  display: inline-block;
+  text-decoration: none;
+  &:hover {
+    background-color: #173f51;
+  }
+}
+.aviso {
+  @include m.superficie(#d9eadf, #163d25);
+}

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="Nicolás Bulacio" />
+    <title>Perfil · Prácticas Bootstrap</title>
+    <link rel="stylesheet" href="vendor/bootstrap.min.css" />
+    <link rel="stylesheet" href="estilos.css" />
+    <script src="vendor/bootstrap.bundle.min.js" defer></script>
+  </head>
+  <body>
+    <a class="visually-hidden-focusable p-2" href="#contenido"
+      >Saltar al contenido</a
+    >
+    <header class="border-bottom bg-white">
+      <nav
+        class="navbar navbar-expand-md container"
+        aria-label="Prácticas de Bootstrap"
+      >
+        <a class="navbar-brand fw-bold" href="index.html">Unidad 5</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#menu"
+          aria-controls="menu"
+          aria-expanded="false"
+          aria-label="Abrir menú"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="menu">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="ej_instagram.html">Instagram</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="ej_vuelos.html">Vuelos</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="ej_timeline.html">Timeline</a>
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link active"
+                aria-current="page"
+                href="ej_perfil.html"
+                >Perfil</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="ej_youtube.html">YouTube</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <main class="container py-4 py-md-5" id="contenido">
+      <div class="row g-4">
+        <div class="col-lg-8">
+          <article class="card overflow-hidden">
+            <div class="portada" aria-hidden="true"></div>
+            <div class="card-body p-4">
+              <img
+                class="avatar rounded-circle mb-3"
+                src="../../UNIDAD%202/2-CSS/imagenes/icono_usuario.jpg"
+                alt="Avatar de un perfil de ejemplo"
+              />
+              <h1 class="h2">Alex Molina</h1>
+              <p class="lead mb-1">Estudiante de desarrollo web</p>
+              <p class="text-secondary">Córdoba, Argentina</p>
+              <div class="d-flex gap-2 flex-wrap">
+                <a href="#experiencia" class="btn btn-primary"
+                  >Ver experiencia</a
+                ><a href="#habilidades" class="btn btn-outline-primary"
+                  >Ver habilidades</a
+                >
+              </div>
+            </div>
+          </article>
+          <section class="card mt-4">
+            <div class="card-body p-4">
+              <h2 class="h4">Acerca de</h2>
+              <p class="mb-0">
+                Aprendo a construir sitios accesibles y adaptables con HTML, CSS
+                y JavaScript. Me interesa diseñar interfaces claras y trabajar
+                en equipo.
+              </p>
+            </div>
+          </section>
+          <section class="card mt-4" id="experiencia">
+            <div class="card-body p-4">
+              <h2 class="h4">Experiencia</h2>
+              <h3 class="h6 mt-3">Proyecto académico: sitio de restaurante</h3>
+              <p class="text-secondary mb-2">
+                Diseño y frontend · Proyecto de ejemplo
+              </p>
+              <p class="mb-0">
+                Organización del contenido, prototipado y desarrollo de páginas
+                responsive.
+              </p>
+            </div>
+          </section>
+        </div>
+        <aside class="col-lg-4">
+          <section class="card">
+            <div class="card-body p-4">
+              <h2 class="h5">Formación</h2>
+              <p class="mb-0">Taller de Desarrollo Web</p>
+            </div>
+          </section>
+          <section class="card mt-4" id="habilidades">
+            <div class="card-body p-4">
+              <h2 class="h5">Habilidades</h2>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item px-0">HTML semántico</li>
+                <li class="list-group-item px-0">CSS responsive</li>
+                <li class="list-group-item px-0">JavaScript</li>
+                <li class="list-group-item px-0">Git y trabajo en equipo</li>
+              </ul>
+            </div>
+          </section>
+          <p class="small text-secondary mt-3">
+            Perfil ficticio para practicar componentes.
+          </p>
+        </aside>
+      </div>
+    </main>
+    <footer class="container border-top py-3 text-secondary">
+      <small>Ejercicios de Bootstrap · Nicolás Bulacio</small>
+    </footer>
+  </body>
+</html>

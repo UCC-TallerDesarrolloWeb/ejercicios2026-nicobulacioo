@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="Nicolás Bulacio" />
+    <title>Prácticas · Prácticas Bootstrap</title>
+    <link rel="stylesheet" href="vendor/bootstrap.min.css" />
+    <link rel="stylesheet" href="estilos.css" />
+    <script src="vendor/bootstrap.bundle.min.js" defer></script>
+  </head>
+  <body>
+    <a class="visually-hidden-focusable p-2" href="#contenido"
+      >Saltar al contenido</a
+    >
+    <header class="border-bottom bg-white">
+      <nav
+        class="navbar navbar-expand-md container"
+        aria-label="Prácticas de Bootstrap"
+      >
+        <a class="navbar-brand fw-bold" href="index.html">Unidad 5</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#menu"
+          aria-controls="menu"
+          aria-expanded="false"
+          aria-label="Abrir menú"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="menu">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="ej_instagram.html">Instagram</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="ej_vuelos.html">Vuelos</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="ej_timeline.html">Timeline</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="ej_perfil.html">Perfil</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="ej_youtube.html">YouTube</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <main class="container py-4 py-md-5" id="contenido">
+      <h1 class="mb-3">Prácticas de Bootstrap</h1>
+      <p class="lead">
+        Rejillas, formularios, tarjetas y utilidades para cinco interfaces.
+      </p>
+      <div class="row g-3 mt-2">
+        <div class="col-12 col-md-6">
+          <article class="card h-100">
+            <div class="card-body">
+              <h2 class="h4">Instagram</h2>
+              <p>Galería responsive de una a tres columnas.</p>
+              <a href="ej_instagram.html" class="btn btn-outline-primary"
+                >Abrir Instagram</a
+              >
+            </div>
+          </article>
+        </div>
+        <div class="col-12 col-md-6">
+          <article class="card h-100">
+            <div class="card-body">
+              <h2 class="h4">Vuelos</h2>
+              <p>Formulario y selección local de una opción de vuelo.</p>
+              <a href="ej_vuelos.html" class="btn btn-outline-primary"
+                >Abrir Vuelos</a
+              >
+            </div>
+          </article>
+        </div>
+        <div class="col-12 col-md-6">
+          <article class="card h-100">
+            <div class="card-body">
+              <h2 class="h4">Timeline</h2>
+              <p>Cronograma de tareas distribuido por semanas.</p>
+              <a href="ej_timeline.html" class="btn btn-outline-primary"
+                >Abrir Timeline</a
+              >
+            </div>
+          </article>
+        </div>
+        <div class="col-12 col-md-6">
+          <article class="card h-100">
+            <div class="card-body">
+              <h2 class="h4">Perfil</h2>
+              <p>Presentación, experiencia y habilidades.</p>
+              <a href="ej_perfil.html" class="btn btn-outline-primary"
+                >Abrir Perfil</a
+              >
+            </div>
+          </article>
+        </div>
+        <div class="col-12 col-md-6">
+          <article class="card h-100">
+            <div class="card-body">
+              <h2 class="h4">YouTube</h2>
+              <p>Videos con buscador y filtros por tema.</p>
+              <a href="ej_youtube.html" class="btn btn-outline-primary"
+                >Abrir YouTube</a
+              >
+            </div>
+          </article>
+        </div>
+      </div>
+    </main>
+    <footer class="container border-top py-3 text-secondary">
+      <small>Ejercicios de Bootstrap · Nicolás Bulacio</small>
+    </footer>
+  </body>
+</html>

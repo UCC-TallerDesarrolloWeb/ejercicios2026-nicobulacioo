@@ -1,0 +1,61 @@
+.tarjeta {
+  padding: 2rem;
+  background: #ffffff;
+  border: 1px solid #bbd0da;
+  border-radius: 0.6rem;
+}
+.tarjeta h2 {
+  color: #235b72;
+  margin-top: 0;
+}
+.tarjeta p {
+  line-height: 1.6;
+}
+
+.boton {
+  background-color: #235b72;
+  color: #ffffff;
+  padding: 0.8rem 1.2rem;
+  border-radius: 0.4rem;
+  display: inline-block;
+  text-decoration: none;
+}
+.boton:hover {
+  background-color: #173f51;
+}
+
+.aviso {
+  background-color: #d9eadf;
+  color: #163d25;
+  padding: 0.8rem 1.2rem;
+  border-radius: 0.4rem;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #183240;
+  background: #eef4f6;
+}
+
+main {
+  width: min(48rem, 92%);
+  margin: 3rem auto;
+}
+
+h1 {
+  font-size: clamp(1.8rem, 5vw, 2.8rem);
+}
+
+section {
+  margin-block: 2rem;
+}
+
+:focus-visible {
+  outline: 3px solid #a85d15;
+  outline-offset: 4px;
+}

@@ -1,0 +1,28 @@
+{
+  "name": "ucc-herramientas-node",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "ESLint, Prettier y JSDoc de la Unidad 5",
+  "author": "Nicolás Bulacio",
+  "license": "MIT",
+  "scripts": {
+    "test": "node --test",
+    "lint": "eslint .",
+    "format:check": "prettier --check .",
+    "format": "prettier --write .",
+    "docs": "jsdoc ejemplo-doc.js -d out",
+    "lint:html": "html-validate --config .htmlvalidate.json \"../4-Bootstrap/*.html\" \"../5-SASS/**/*.html\""
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.39.1",
+    "eslint": "^9.39.1",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-import": "^2.32.0",
+    "eslint-plugin-prettier": "^5.5.4",
+    "globals": "^16.5.0",
+    "html-validate": "^11.18.0",
+    "jsdoc": "^4.0.5",
+    "prettier": "^3.6.2"
+  }
+}

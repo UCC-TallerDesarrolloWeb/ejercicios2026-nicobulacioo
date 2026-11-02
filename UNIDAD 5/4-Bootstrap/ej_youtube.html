@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="Nicolás Bulacio" />
+    <title>YouTube · Prácticas Bootstrap</title>
+    <link rel="stylesheet" href="vendor/bootstrap.min.css" />
+    <link rel="stylesheet" href="estilos.css" />
+    <script src="vendor/bootstrap.bundle.min.js" defer></script>
+    <script src="interacciones.js" defer></script>
+  </head>
+  <body>
+    <a class="visually-hidden-focusable p-2" href="#contenido"
+      >Saltar al contenido</a
+    >
+    <header class="border-bottom bg-white">
+      <nav
+        class="navbar navbar-expand-md container"
+        aria-label="Prácticas de Bootstrap"
+      >
+        <a class="navbar-brand fw-bold" href="index.html">Unidad 5</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#menu"
+          aria-controls="menu"
+          aria-expanded="false"
+          aria-label="Abrir menú"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="menu">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="ej_instagram.html">Instagram</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="ej_vuelos.html">Vuelos</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="ej_timeline.html">Timeline</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="ej_perfil.html">Perfil</a>
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link active"
+                aria-current="page"
+                href="ej_youtube.html"
+                >YouTube</a
+              >
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <main class="container py-4 py-md-5" id="contenido">
+      <div class="row g-4">
+        <aside class="col-md-3 col-xl-2">
+          <h1 class="h4">WebTube</h1>
+          <nav aria-label="Secciones de videos" class="list-group">
+            <a
+              class="list-group-item list-group-item-action active"
+              href="ej_youtube.html"
+              aria-current="page"
+              >Inicio</a
+            ><a class="list-group-item list-group-item-action" href="#videos"
+              >Videos de clase</a
+            >
+          </nav>
+        </aside>
+        <div class="col-md-9 col-xl-10">
+          <form id="buscar-videos" class="mb-3">
+            <label class="form-label" for="busqueda-video">Buscar videos</label>
+            <div class="input-group">
+              <input
+                class="form-control"
+                type="search"
+                id="busqueda-video"
+                placeholder="HTML, CSS o JavaScript"
+              /><button class="btn btn-primary" type="submit">Buscar</button>
+            </div>
+          </form>
+          <div
+            class="d-flex flex-wrap gap-2 mb-4"
+            role="group"
+            aria-label="Filtrar por tema"
+          >
+            <button
+              type="button"
+              class="btn btn-sm btn-secondary"
+              data-tema="Todos"
+              aria-pressed="true"
+            >
+              Todos</button
+            ><button
+              type="button"
+              class="btn btn-sm btn-outline-secondary"
+              data-tema="HTML"
+              aria-pressed="false"
+            >
+              HTML</button
+            ><button
+              type="button"
+              class="btn btn-sm btn-outline-secondary"
+              data-tema="CSS"
+              aria-pressed="false"
+            >
+              CSS</button
+            ><button
+              type="button"
+              class="btn btn-sm btn-outline-secondary"
+              data-tema="JavaScript"
+              aria-pressed="false"
+            >
+              JavaScript</button
+            ><button
+              type="button"
+              class="btn btn-sm btn-outline-secondary"
+              data-tema="Diseño"
+              aria-pressed="false"
+            >
+              Diseño
+            </button>
+          </div>
+          <h2 class="h4 mb-3" id="videos">Videos de clase</h2>
+          <p role="status" id="resultado-videos"></p>
+          <div class="row row-cols-1 row-cols-lg-2 row-cols-xl-3 g-4">
+            <div
+              class="col"
+              data-video
+              data-titulo="Accesibilidad en HTML"
+              data-categoria="HTML"
+            >
+              <article>
+                <a
+                  class="video-link"
+                  href="https://www.youtube.com/watch?v=ZdyJMznlgJ8"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  ><img
+                    class="video-thumb rounded"
+                    src="assets/video-1.svg"
+                    alt="Miniatura del tutorial Accesibilidad en HTML"
+                  />
+                  <h2 class="h6 mt-3">Accesibilidad en HTML</h2>
+                  <span class="small text-secondary"
+                    >Material de clase · Abrir video en YouTube</span
+                  ></a
+                >
+              </article>
+            </div>
+            <div
+              class="col"
+              data-video
+              data-titulo="Columnas fluidas con CSS"
+              data-categoria="CSS"
+            >
+              <article>
+                <a
+                  class="video-link"
+                  href="https://www.youtube.com/watch?v=4BEX3s6ucDs"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  ><img
+                    class="video-thumb rounded"
+                    src="assets/video-2.svg"
+                    alt="Miniatura del tutorial Columnas fluidas con CSS"
+                  />
+                  <h2 class="h6 mt-3">Columnas fluidas con CSS</h2>
+                  <span class="small text-secondary"
+                    >Material de clase · Abrir video en YouTube</span
+                  ></a
+                >
+              </article>
+            </div>
+            <div
+              class="col"
+              data-video
+              data-titulo="Grid de productos"
+              data-categoria="CSS"
+            >
+              <article>
+                <a
+                  class="video-link"
+                  href="https://www.youtube.com/watch?v=wENoFAsqUaY"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  ><img
+                    class="video-thumb rounded"
+                    src="assets/video-3.svg"
+                    alt="Miniatura del tutorial Grid de productos"
+                  />
+                  <h2 class="h6 mt-3">Grid de productos</h2>
+                  <span class="small text-secondary"
+                    >Material de clase · Abrir video en YouTube</span
+                  ></a
+                >
+              </article>
+            </div>
+            <div
+              class="col"
+              data-video
+              data-titulo="JavaScript: conversor de unidades"
+              data-categoria="JavaScript"
+            >
+              <article>
+                <a
+                  class="video-link"
+                  href="https://www.youtube.com/watch?v=ETZtCd1sCxk"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  ><img
+                    class="video-thumb rounded"
+                    src="assets/video-4.svg"
+                    alt="Miniatura del tutorial JavaScript: conversor de unidades"
+                  />
+                  <h2 class="h6 mt-3">JavaScript: conversor de unidades</h2>
+                  <span class="small text-secondary"
+                    >Material de clase · Abrir video en YouTube</span
+                  ></a
+                >
+              </article>
+            </div>
+            <div
+              class="col"
+              data-video
+              data-titulo="Diálogos con JavaScript"
+              data-categoria="JavaScript"
+            >
+              <article>
+                <a
+                  class="video-link"
+                  href="https://www.youtube.com/watch?v=kyU9drm5ke0"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  ><img
+                    class="video-thumb rounded"
+                    src="assets/video-5.svg"
+                    alt="Miniatura del tutorial Diálogos con JavaScript"
+                  />
+                  <h2 class="h6 mt-3">Diálogos con JavaScript</h2>
+                  <span class="small text-secondary"
+                    >Material de clase · Abrir video en YouTube</span
+                  ></a
+                >
+              </article>
+            </div>
+            <div
+              class="col"
+              data-video
+              data-titulo="Prototipos y wireframes"
+              data-categoria="Diseño"
+            >
+              <article>
+                <a
+                  class="video-link"
+                  href="https://www.youtube.com/watch?v=9xP9vlz6s7k"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  ><img
+                    class="video-thumb rounded"
+                    src="assets/video-6.svg"
+                    alt="Miniatura del tutorial Prototipos y wireframes"
+                  />
+                  <h2 class="h6 mt-3">Prototipos y wireframes</h2>
+                  <span class="small text-secondary"
+                    >Material de clase · Abrir video en YouTube</span
+                  ></a
+                >
+              </article>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer class="container border-top py-3 text-secondary">
+      <small>Ejercicios de Bootstrap · Nicolás Bulacio</small>
+    </footer>
+  </body>
+</html>

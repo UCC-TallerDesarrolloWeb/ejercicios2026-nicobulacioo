@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="Nicolás Bulacio" />
+    <title>Timeline · Prácticas Bootstrap</title>
+    <link rel="stylesheet" href="vendor/bootstrap.min.css" />
+    <link rel="stylesheet" href="estilos.css" />
+    <script src="vendor/bootstrap.bundle.min.js" defer></script>
+  </head>
+  <body>
+    <a class="visually-hidden-focusable p-2" href="#contenido"
+      >Saltar al contenido</a
+    >
+    <header class="border-bottom bg-white">
+      <nav
+        class="navbar navbar-expand-md container"
+        aria-label="Prácticas de Bootstrap"
+      >
+        <a class="navbar-brand fw-bold" href="index.html">Unidad 5</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#menu"
+          aria-controls="menu"
+          aria-expanded="false"
+          aria-label="Abrir menú"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="menu">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="ej_instagram.html">Instagram</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="ej_vuelos.html">Vuelos</a>
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link active"
+                aria-current="page"
+                href="ej_timeline.html"
+                >Timeline</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="ej_perfil.html">Perfil</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="ej_youtube.html">YouTube</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <main class="container py-4 py-md-5" id="contenido">
+      <div
+        class="d-flex flex-wrap justify-content-between align-items-end gap-2 mb-4"
+      >
+        <div>
+          <h1>Timeline del proyecto</h1>
+          <p class="mb-0 text-secondary">Plan de trabajo de cuatro semanas.</p>
+        </div>
+        <a class="btn btn-outline-primary" href="#cronograma">Ver cronograma</a>
+      </div>
+      <div class="card">
+        <div class="card-header bg-white p-3">
+          <h2 class="h5 mb-0" id="cronograma">Sitio del restaurante</h2>
+        </div>
+        <div class="table-responsive">
+          <table class="table timeline mb-0">
+            <caption class="px-3">
+              Las barras muestran las semanas de trabajo; las etiquetas indican
+              el estado.
+            </caption>
+            <thead class="table-light">
+              <tr>
+                <th scope="col">Tarea y estado</th>
+                <th scope="col">Semana 1</th>
+                <th scope="col">Semana 2</th>
+                <th scope="col">Semana 3</th>
+                <th scope="col">Semana 4</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row" class="p-3">
+                  <span class="d-block">WEB-1 · Requisitos</span
+                  ><span class="badge text-bg-success mt-2">Finalizado</span>
+                </th>
+                <td>
+                  <div
+                    class="progress"
+                    role="img"
+                    aria-label="Trabajo previsto en semana 1"
+                  >
+                    <div class="progress-bar bg-success w-100"></div>
+                  </div>
+                </td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <th scope="row" class="p-3">
+                  <span class="d-block">WEB-2 · Wireframes</span
+                  ><span class="badge text-bg-success mt-2">Finalizado</span>
+                </th>
+                <td>
+                  <div
+                    class="progress"
+                    role="img"
+                    aria-label="Trabajo previsto en semana 1"
+                  >
+                    <div class="progress-bar bg-success w-100"></div>
+                  </div>
+                </td>
+                <td>
+                  <div
+                    class="progress"
+                    role="img"
+                    aria-label="Trabajo previsto en semana 2"
+                  >
+                    <div class="progress-bar bg-success w-100"></div>
+                  </div>
+                </td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <th scope="row" class="p-3">
+                  <span class="d-block">WEB-3 · Desarrollo HTML/CSS</span
+                  ><span class="badge text-bg-primary mt-2">En curso</span>
+                </th>
+                <td></td>
+                <td>
+                  <div
+                    class="progress"
+                    role="img"
+                    aria-label="Trabajo previsto en semana 2"
+                  >
+                    <div class="progress-bar bg-primary w-100"></div>
+                  </div>
+                </td>
+                <td>
+                  <div
+                    class="progress"
+                    role="img"
+                    aria-label="Trabajo previsto en semana 3"
+                  >
+                    <div class="progress-bar bg-primary w-100"></div>
+                  </div>
+                </td>
+                <td></td>
+              </tr>
+              <tr>
+                <th scope="row" class="p-3">
+                  <span class="d-block">WEB-4 · Pruebas responsive</span
+                  ><span class="badge text-bg-secondary mt-2">Pendiente</span>
+                </th>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>
+                  <div
+                    class="progress"
+                    role="img"
+                    aria-label="Trabajo previsto en semana 4"
+                  >
+                    <div class="progress-bar bg-secondary w-100"></div>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </main>
+    <footer class="container border-top py-3 text-secondary">
+      <small>Ejercicios de Bootstrap · Nicolás Bulacio</small>
+    </footer>
+  </body>
+</html>
